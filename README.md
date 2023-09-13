@@ -29,7 +29,6 @@ Trujillo Álvarez, Carmen Belén
 Trujillo Navarro, Santiago
 Valverde Olmedo, Víctor
 Villalta Dos Santos, Lunna Aytana
-![image](https://github.com/AVegMor/github-alumnos-daw-tarde-22-24/assets/144597519/28ac3524-9818-4fcc-8895-57ee6f97a097)
 
 
 
