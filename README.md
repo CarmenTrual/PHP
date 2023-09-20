@@ -14,7 +14,7 @@ Conde Serrano, Cristina
 
 Cubillos García, Steven
 
-Delgado Muñoz, Cristina - CrisDelgado99
+[Delgado Muñoz, Cristina](https://github.com/CrisDelgado99)
 
 Feqri, Safaa
 
