@@ -1,5 +1,5 @@
  
-# Perfiles de github romocion alumnos DAW Tarde 22-24
+# Perfiles de github promocion alumnos DAW Tarde 22-24
 Profesora:
 
 [Vega Moreno, Alicia](https://github.com/AVegMor)
