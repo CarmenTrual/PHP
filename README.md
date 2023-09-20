@@ -41,8 +41,7 @@ Movila, Cosmin-Valentín
 [Ponce Garrido, Luis](https://github.com/luis6928)
 
 [Silva Alcántara, Rafael](https://github.com/RafaelSilva27)
-
-Trujillo Álvarez, Carmen Belén
+[Trujillo Álvarez, Carmen Belén](https://github.com/CarmenTrual)
 
 Trujillo Navarro, Santiago
 
