@@ -20,7 +20,7 @@ Feqri, Safaa
 
 Fernández Chica, Antonio
 
-Gallego Fernández, Francisco Javier
+[Gallego Fernández, Francisco Javier](https://github.com/JaviGalFer)
 
 Jáuregui Lahoz, Guillermo
 
