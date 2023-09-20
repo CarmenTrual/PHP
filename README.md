@@ -38,7 +38,7 @@ Moya Baena, José Ángel
 
 [Nadales Suárez, Mario](https://github.com/MarioNadales)
 
-Ponce Garrido, Luis
+[Ponce Garrido, Luis] (https://github.com/luis6928)
 
 [Silva Alcántara, Rafael](https://github.com/RafaelSilva27)
 
