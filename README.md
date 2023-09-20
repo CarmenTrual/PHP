@@ -22,7 +22,7 @@ Fernández Chica, Antonio
 
 [Gallego Fernández, Francisco Javier](https://github.com/JaviGalFer)
 
-Jáuregui Lahoz, Guillermo
+[Jáuregui Lahoz, Guillermo](https://github.com/Guisseee)
 
 Martín Barea, Irene
 
