@@ -35,6 +35,7 @@ Miralles Gutiérrez, Antonio
 Movila, Cosmin-Valentín
 
 [Moya Baena, José Ángel](https://github.com/ArkanMB)
+
 [Nadales Suárez, Mario](https://github.com/MarioNadales)
 
 [Ponce Garrido, Luis](https://github.com/luis6928)
