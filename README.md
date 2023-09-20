@@ -24,7 +24,7 @@ Fernández Chica, Antonio
 
 [Jáuregui Lahoz, Guillermo](https://github.com/Guisseee)
 
-Martín Barea, Irene
+[Martín Barea, Irene](https://github.com/IreneMB2001)
 
 Martín Rojas, José Miguel
 
