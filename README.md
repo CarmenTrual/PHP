@@ -36,7 +36,7 @@ Movila, Cosmin-Valentín
 
 Moya Baena, José Ángel
 
-Nadales Suárez, Mario
+[Nadales Suárez, Mario](https://github.com/MarioNadales)
 
 Ponce Garrido, Luis
 
