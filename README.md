@@ -28,7 +28,7 @@ Fernández Chica, Antonio
 
 Martín Rojas, José Miguel
 
-Millán Soria, Christian
+[Millán Soria, Christian](https://github.com/cmilsor245)
 
 Miralles Gutiérrez, Antonio
 
