@@ -8,7 +8,7 @@ Alumnos:
 
 * [Apellidos, Nombre](https://github.com/username)
   
-[Arroyo Maqueda, Pablo] (https://github.com/pawx10)
+[Arroyo Maqueda, Pablo](https://github.com/pawx10)
 
 Conde Serrano, Cristina
 
