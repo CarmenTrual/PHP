@@ -48,7 +48,7 @@ Movila, Cosmin-Valentín
 
 Valverde Olmedo, Víctor
 
-[Villalta Dos Santos, Lunna Aytana] (https://github.com/lvildos).
+[Villalta Dos Santos, Lunna Aytana](https://github.com/lvildos).
 
 
 
