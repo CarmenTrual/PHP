@@ -44,7 +44,7 @@ Movila, Cosmin-Valentín
 
 [Trujillo Álvarez, Carmen Belén](https://github.com/CarmenTrual)
 
-[Trujillo Navarro, Santiago] (https://github.com/SantiTru).
+[Trujillo Navarro, Santiago](https://github.com/SantiTru).
 
 Valverde Olmedo, Víctor
 
