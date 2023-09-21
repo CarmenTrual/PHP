@@ -46,7 +46,7 @@ Movila, Cosmin-Valentín
 
 [Trujillo Navarro, Santiago](https://github.com/SantiTru).
 
-Valverde Olmedo, Víctor
+[Valverde Olmedo, Víctor](https://github.com/Victor01val)
 
 [Villalta Dos Santos, Lunna Aytana](https://github.com/lvildos).
 
