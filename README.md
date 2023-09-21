@@ -12,7 +12,7 @@ Alumnos:
 
 [Conde Serrano, Cristina](https://github.com/CrisConSer)
 
-Cubillos García, Steven
+[Cubillos García, Steven](https://github.com/StevenCubillos22)
 
 [Delgado Muñoz, Cristina](https://github.com/CrisDelgado99)
 
