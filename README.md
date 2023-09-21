@@ -26,7 +26,7 @@ Alumnos:
 
 [Martín Barea, Irene](https://github.com/IreneMB2001)
 
-Martín Rojas, José Miguel
+[Martín Rojas, José Miguel](https://github.com/jmarroj844)
 
 [Millán Soria, Christian](https://github.com/cmilsor245)
 
