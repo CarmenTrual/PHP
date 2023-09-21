@@ -10,7 +10,7 @@ Alumnos:
   
 [Arroyo Maqueda, Pablo](https://github.com/pawx10)
 
-Conde Serrano, Cristina
+[Conde Serrano, Cristina](https://github.com/CrisConSer)
 
 Cubillos García, Steven
 
@@ -18,7 +18,7 @@ Cubillos García, Steven
 
 [Feqri, Safaa](https://github.com/Safaafeqri89)
 
-Fernández Chica, Antonio
+[Fernández Chica, Antonio](https://github.com/Aerog12)
 
 [Gallego Fernández, Francisco Javier](https://github.com/JaviGalFer)
 
