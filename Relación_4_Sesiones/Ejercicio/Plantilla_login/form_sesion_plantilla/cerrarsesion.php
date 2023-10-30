@@ -1,4 +1,4 @@
-<?
+<? session_start();
 /**
  * En esta página se encuentra el código necesario 
  * para cerrar la sesión y eliminar la información 
@@ -8,7 +8,8 @@
  * 
  */
 
-  session_start();
+
   session_destroy();
-  $_SESSION = array
-?>
+  $_SESSION = array ();
+  ?>
+  <a href="login.php"></a>

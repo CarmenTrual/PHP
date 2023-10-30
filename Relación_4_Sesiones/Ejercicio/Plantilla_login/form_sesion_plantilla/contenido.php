@@ -1,4 +1,4 @@
-<?
+<?session_start();
 /**
  * En esta página se encuentra el código necesario para 
  * Si no hay usuario en la sesión se mostrará el login.
@@ -9,7 +9,13 @@
  * 
  */
 
-  session_start();
+  
 
+  if(isset($_SESSION['usuario'])){
+    echo "Hola," . $_SESSION['usuario'];
+  }else{
+    echo "Inicia sesión.";
+  }
   
 ?>
+

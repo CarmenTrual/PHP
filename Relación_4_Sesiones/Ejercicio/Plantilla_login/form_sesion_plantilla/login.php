@@ -1,4 +1,4 @@
-<?
+<?session_start();
 /**
  * En esta página se encuentra el código de que comprueba 
  * que el usuario conectado es "test" y su password es "test".
@@ -10,4 +10,21 @@
  * Autor: Nombre Apellidos
  * 
  */
+
+if(isset($_POST['usuario']) && isset($POST['password'])){
+
+$usuario = $_POST['usuario'];
+$password = $_POST['password'];
+
+if($usuario == 'test' && $password == 'test' ){
+  header("location: contenido.php");
+  }else{
+    header("location: registro.php");
+  }
+}
+
+include "views/login.view.php";
+
+?>
+
 
