@@ -27,4 +27,4 @@ if (!isset($_REQUEST['numero'])) {
   }
   echo "<br><a href='index.php'>Sigue jugando...</a>";
 }
-?>
+?> 
