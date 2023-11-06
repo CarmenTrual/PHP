@@ -12,9 +12,9 @@
   
 
   if(isset($_SESSION['usuario'])){
-    echo "Hola," . $_SESSION['usuario'];
+    require 'views/contenido.view.php';
   }else{
-    echo "Inicia sesión.";
+    require 'views/login.view.php';
   }
   
 ?>
