@@ -16,6 +16,7 @@ if (!isset($_REQUEST['numero'])) {
   $n = $_REQUEST['numero'];
   $_SESSION['intentos']++;
   echo "Tu número es: $n<br>";
+  
   if ($n > $_SESSION['aleatorio']) {
     echo "Mi número es MENOR";
   } else if ($n < $_SESSION['aleatorio']) {

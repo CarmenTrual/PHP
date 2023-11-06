@@ -11,4 +11,6 @@ echo "<h1>Pantalla inicio</h1>";
 
 echo "<a href='login.php'>Inicia sesión</a>";
 
+"<a href='login.php'>Inicia sesión</a>";
+
 ?>
