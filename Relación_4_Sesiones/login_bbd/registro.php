@@ -10,43 +10,30 @@ if (
     $password2 = hash('sha512', $_POST['password2']);
 
 
-    if ($password == $password2) { //si las pass coinciden comprobamos que el usuario no existe ya en BD
+    if ($password == $password2) { 
         try {
-            $host = "db";
-            $dbUsername = "root";
-            $dbPassword = "test";
-            $dbName = "Usuarios";
-            $conn = new PDO("mysql:host=$host;dbname=$dbName", $dbUsername, $dbPassword);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $statement = $conn->prepare('SELECT * FROM Usuarios WHERE usuario = :usuario LIMIT 1');
+            $host = "wep-app-database.cloarl2hwxs2.us-east-1.rds.amazonaws.com";
+  $dbUsername = "webuser";
+  $dbPassword = "MKKQFuk54LBON6TtSeBJ";
+  $dbName = "database1";
+  $conn = new PDO("mysql:host=$host;dbname=$dbName", $dbUsername, $dbPassword);
+
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $statement = $conn->prepare('SELECT * FROM Usuarios WHERE Nombre = :usuario LIMIT 1');
             $statement->execute(array(':usuario' => $usuario));
             $resultado = $statement->fetch();
 
             if ($resultado) {
-               // echo "el usuario ya existe";
             } else {
-                //guardo en BD el usuario
-                $statement = $conn->prepare('INSERT INTO Usuarios(usuario, password) values (:usuario, :pass)');
+
+                $statement = $conn->prepare('INSERT INTO Usuarios(Nombre, Id) values (:usuario, :password)');
                 $statement->execute(array(
                     ':usuario' => $usuario,
-                    ':pass' => $password
+                    ':password' => $password
                 ));
             }
 
 
-            /****************************
-            $conexion = mysqli_connect('db', 'root', 'test', "usuarios");
-            $query = 'SELECT * From usuarios';
-            $result = mysqli_query($conexion, $query);
-
-            while ($value = $result->fetch_array(MYSQLI_ASSOC)) {
-                foreach ($value as $element) {
-                    echo $element ;
-                }
-            }
-            
-            */
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }

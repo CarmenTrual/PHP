@@ -1,0 +1,56 @@
+
+
+body {
+  background-image: url(../Img/FondoAzul2.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff; /* Texto blanco */
+  text-align: center;
+  margin-top: 5%;  
+}
+
+a {
+  color: #3498db; /* Color predeterminado para los enlaces (azul) */
+  text-decoration: double; /* Elimina la subrayado predeterminado */
+}
+
+a.resaltado {
+  width: 100%;
+  font-weight: bold; /* Hace que el texto sea más grueso para resaltar */
+  color: #ffffff; /* Cambia el color del enlace resaltado a blanco */
+  background-color: #3498db; /* Fondo azul para el enlace resaltado */
+  padding: 5px 10px; /* Agrega un poco de espacio alrededor del enlace resaltado */
+  border-radius: 5px; /* Añade esquinas redondeadas al enlace resaltado */
+}
+
+.image-container {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.image-container h1 {
+  font-size: 24px;
+}
+
+.image-container h5 {
+  font-size: 18px;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-column {
+  flex: 0 0 30%; /* Tamaño de la columna de imagen */
+  padding: 10px;
+}
+
+.image {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+

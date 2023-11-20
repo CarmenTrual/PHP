@@ -1,0 +1,31 @@
+body {
+  background-image: url(../Img/FondoAzul2.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff; /* Texto blanco */
+  text-align: center;
+  margin-top: 5%;  
+}
+
+th {
+  background-color: rgb(96, 13, 137); /* Color de fondo para las celdas de encabezado */
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgb(96, 13, 137); /* Color de fondo para la tabla */
+}
+
+/* Estilo para las celdas de datos */
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
