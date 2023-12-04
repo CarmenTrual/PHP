@@ -62,6 +62,11 @@
     $db = new mysqli("db", "root", "test", "biblioteca");
     $result = $db->query();
     // Buscamos todos los libros de la biblioteca
+    if ($result = $db->query("SELECT * FROM libros
+    INNER JOIN escriben ON libros.idLibro = escriben.idLibro
+    Inner join personas ON escriben.idPersona =  "))//SIN TERMINAR DE COPIARLO
+
+
     if ($result->num_rows != 0) {
 
     
@@ -72,6 +77,23 @@
     }
     echo "<p><a href='index.php?action=formularioInsertarLibros'>Nuevo</a></p>";
   }
+
+  echo "form action='index.php'>
+  <input type = 'hedden' name='action' value='buscarLibros'>
+  <input type = 'text' name='textoBusqueda'>
+  <input type = 'submit' value='buscar'>
+  </form>";
+
+  //Ahora, la tabla con los datos de los libros
+  echo "<table border = '1'>";
+  while ($fila = $result->fetch_assoc()){
+    echo "<tr>";
+    echo "<td>".$fila["titulo"]."</td>";
+    echo "<td>".$fila["genero"]."</td>";
+    echo "<td>".$fila["pais"]."</td>";
+  }
+
+
 
   // --------------------------------- FORMULARIO ALTA DE LIBROS ----------------------------------------
 
