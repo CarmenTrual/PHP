@@ -11,25 +11,29 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
 
   // Consultar si existe el usuario en la base de datos
   $consulta = $conexion->stmt_init();
-  $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ? AND password =?");
-  $consulta->bind_param('ss', $usuario, $password);
+  $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
+  $consulta->bind_param('s', $usuario);
   $consulta->execute();
   $resultado = $consulta->get_result();
-  $fila = $resultado->fetch_assoc();
 
-  // Consultamos si el usuario y la contraseña son correctos
-  if ($resultado->num_rows > 0) {
-    // Si es correcto, guardamos la información del usuario en la sesión
-    $_SESSION['usuario_id'] = $fila['id'];
-    $_SESSION['usuario_nombre'] = $fila['usuario'];
+  // Verificar si encontramos al usuario
+  if ($fila = $resultado->fetch_assoc()) {
+    // Verificar si la contraseña es correcta
+    if (password_verify($password, $fila['password'])) {
+      // Si es correcto, guardamos la información del usuario en la sesión
+      $_SESSION['usuario_id'] = $fila['id'];
+      $_SESSION['usuario_nombre'] = $fila['usuario'];
 
-    // Redirigimos al usuario a la página de tareas pendientes
-    header('Location: contenido.php');
-    exit;
+      // Redirigimos al usuario a la página de tareas pendientes
+      header('Location: contenido.php');
+      exit;
+    } else {
+      // Si la contraseña no es correcta, asignamos un mensaje de error
+      $mensajeError = "La contraseña es incorrecta.";
+    }
   } else {
-    // Si no encontramos al usuario, mostramos un mensaje de error
-    // Si la contraseña no es correcta, mostramos un mensaje de error
-    echo "El usuario o la contraseña es incorrecta.";
+    // Si no encontramos al usuario, asignamos un mensaje de error
+    $mensajeError = "El usuario no se encuentra registrado.";
   }
 }
 require '../Views/login.view.php';
