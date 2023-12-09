@@ -1,8 +1,16 @@
 <?php
 session_start();
 
-//Aquí va el archivo con la conexión a la base de datos con mysqli
+// Verificar si el usuario ya está logueado
+if (isset($_SESSION['usuario_id'])) {
+  header('Location: contenido.php');
+  exit;
+}
+
+//Archivo con la conexión a la base de datos con mysqli
 require './ConexionBBDD/conexion.php';
+
+$mensajeError = '';
 
 //Comprobar si se ha enviado el formulario
 if (isset($_POST['usuario']) && isset($_POST['password'])) {
@@ -28,12 +36,14 @@ if (isset($_POST['usuario']) && isset($_POST['password'])) {
       header('Location: contenido.php');
       exit;
     } else {
-      // Si la contraseña no es correcta, asignamos un mensaje de error
+      // Mensaje de error si la contraseña es incorrecta
       $mensajeError = "La contraseña es incorrecta.";
     }
   } else {
-    // Si no encontramos al usuario, asignamos un mensaje de error
+    // Mensaje de error si el usuario no existe en la base de datos
     $mensajeError = "El usuario no se encuentra registrado.";
   }
+  $consulta->close();
 }
 require '../Views/login.view.php';
+?>
