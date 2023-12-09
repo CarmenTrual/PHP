@@ -26,7 +26,7 @@
           </details>
           <!-- Botones -->
           <div class="tarea-acciones">
-            <form action="modificar.view.php" method="post">
+            <form action="../Views/modificar.view.php" method="post">
               <input type="hidden" name="idTarea" value="<?php echo $tarea['id']; ?>">
               <input type="submit" value="Modificar" class="accion-btn">
             </form>
