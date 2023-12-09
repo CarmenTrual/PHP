@@ -1,0 +1,58 @@
+body {
+  background-image: url("fondo1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h2 {
+  font-size: 38px;
+  color: blue;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#registro {
+  color: rgb(60, 177, 231);
+  width: 400px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#registro [type="text"], 
+#registro [type="password"],
+#registro [type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilo específico para los campos de contraseña */
+#registro [type="password"] {
+  width: 100%;
+}
+
+#registro [type="submit"] {
+  color: white;
+  background-color: rgb(60, 177, 231);
+  border: none;
+  cursor: pointer;
+}
+
+#registro [type="submit"]:hover {
+  background-color: #187bcd;
+}
+
+

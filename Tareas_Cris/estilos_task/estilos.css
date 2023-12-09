@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.col_4 {
+  flex: 0 0 48%;
+}
+
+.card-body {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.task, .description {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.enviar {
+  background-color: rgb(17, 145, 184);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #073b6b;
+  color: #fff;
+}
+
+.boton-editar,
+.boton-borrar {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50; /* Color de fondo para el botón editar */
+    border-radius: 4px;
+}
+
+.boton-borrar {
+    background-color: #f44336; /* Color de fondo para el botón borrar */
+}
+
