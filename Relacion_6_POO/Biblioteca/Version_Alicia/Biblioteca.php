@@ -1,4 +1,5 @@
 <?php
+include_once("../Libro.php");
 class Biblioteca{
 
   private $db=null;
@@ -31,7 +32,7 @@ class Biblioteca{
 
               // Ahora, la tabla con los datos de los libros
               echo "<table border ='1'>";
-              while ($fila = $result->fetch_object()) {
+              while ($fila = $result->fetch_object("Libro")) {
                   echo "<tr>";
                   echo "<td>" . $fila->titulo . "</td>";
                   echo "<td>" . $fila->genero. "</td>";

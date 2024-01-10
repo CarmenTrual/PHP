@@ -1,20 +1,21 @@
 <?php
 class Libro{
   //Atributos
-  private $titulo;
-  private $genero;
-  private $pais;
-  private $año;
-  private $numPaginas;
+  public $titulo;
+  public $genero;
+  public $pais;
+  public $año;
+  public $numPaginas;
 
   //Constructor
-  public function __construct($titulo,$genero, $pais, $año, $numPaginas){
+  /*public function __construct($titulo,$genero, $pais, $año, $numPaginas){
     $this -> titulo = $titulo;
     $this -> genero = $genero;
     $this -> pais = $pais;
     $this -> año = $año;
     $this -> numPaginas = $numPaginas;
-  } 
+  } */
+  public function __construct(){}
 
   //Métodos
   public function getTitulo(){
