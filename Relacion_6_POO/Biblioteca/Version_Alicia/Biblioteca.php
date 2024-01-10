@@ -7,14 +7,11 @@ class Biblioteca{
     $this->db = new mysqli("db", "root", "test", "biblioteca");
   }
 
-
-
   // --------------------------------- MOSTRAR LISTA DE LIBROS ----------------------------------------
   function mostrarListaLibros()
   {
       echo "<h1>Biblioteca</h1>";
 
-      
       // Buscamos todos los libros de la biblioteca
       if ($result = $this->db->query("SELECT * FROM libros
               INNER JOIN escriben ON libros.idLibro = escriben.idLibro
@@ -106,7 +103,7 @@ class Biblioteca{
 
       // Lanzamos el INSERT contra la BD.
       //echo "INSERT INTO libros (titulo,genero,pais,año,numPaginas) VALUES ('$titulo','$genero', '$pais', '$ano', '$numPaginas') <br>";
-     
+
       $this->db->query("INSERT INTO libros (titulo,genero,pais,año,numPaginas) VALUES ('$titulo','$genero', '$pais', '$ano', '$numPaginas')");
       //echo $db->affected_rows;
       if ($this->db->affected_rows == 1) {
@@ -317,7 +314,6 @@ class Biblioteca{
   }
   // --------------------------------- INSERTAR autores ----------------------------------------
 
-
   function insertarAutor()
   {
       echo "<h1>Alta de autores</h1>";
@@ -330,7 +326,7 @@ class Biblioteca{
       // Lanzamos el INSERT contra la BD.
       //echo "INSERT INTO personas (nombre,apellido) VALUES ('$nombre','$apellido') <br>";
    //   $db = new mysqli("db", "root", "test", "biblioteca");
-   $this->db->query("INSERT INTO personas (nombre,apellido) VALUES ('$nombre','$apellido')");
+    $this->db->query("INSERT INTO personas (nombre,apellido) VALUES ('$nombre','$apellido')");
       //echo $db->affected_rows;
       if ($this->db->affected_rows == 1) {
 
@@ -341,5 +337,4 @@ class Biblioteca{
       }
       echo "<p><a href='index.php'>Volver</a></p>";
   }
-
 }
