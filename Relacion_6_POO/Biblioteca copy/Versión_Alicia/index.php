@@ -1,19 +1,16 @@
-<!-- BIBLIOTECA VERSIÓN 1
-  Características de esta versión:
-  - Código monolítico (sin arquitectura MVC)
-  - Sin seguridad
-  - Sin sesiones ni control de accesoF
-  - Sin reutilización de código
+<!-- BIBLIOTECA CON POO
 -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 
 <body>
     <?php
+
+    require ("Autor.php");
 
     // Miramos el valor de la variable "action", si existe. Si no, le asignamos una acción por defecto
     if (isset($_REQUEST["action"])) {
