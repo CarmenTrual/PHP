@@ -9,7 +9,7 @@ class Biblioteca{
   }
 
   // --------------------------------- MOSTRAR LISTA DE LIBROS ----------------------------------------
-  function mostrarListaLibros()
+  public function mostrarListaLibros()
   {
       echo "<h1>Biblioteca</h1>";
 
@@ -58,7 +58,7 @@ class Biblioteca{
 
   // --------------------------------- FORMULARIO ALTA DE LIBROS ----------------------------------------
 
-  function formularioInsertarLibros()
+  public function formularioInsertarLibros()
   {
       echo "<h1>Modificación de libros</h1>";
 
@@ -89,7 +89,7 @@ class Biblioteca{
 
   // --------------------------------- INSERTAR LIBROS ----------------------------------------
 
-  function insertarLibro()
+  public function insertarLibro()
   {
       echo "<h1>Alta de libros</h1>";
 
@@ -129,7 +129,7 @@ class Biblioteca{
 
   // --------------------------------- BORRAR LIBROS ----------------------------------------
 
-  function borrarLibro()
+  public function borrarLibro()
   {
       echo "<h1>Borrar libros</h1>";
 
@@ -149,7 +149,7 @@ class Biblioteca{
 
   // --------------------------------- FORMULARIO MODIFICAR LIBROS ----------------------------------------
 
-  function formularioModificarLibro()
+  public function formularioModificarLibro()
   {
       echo "<h1>Modificación de libros</h1>";
 
@@ -204,7 +204,7 @@ class Biblioteca{
 
   // --------------------------------- MODIFICAR LIBROS ----------------------------------------
 
-  function modificarLibro()
+  public function modificarLibro()
   {
       echo "<h1>Modificación de libros</h1>";
 
@@ -246,7 +246,7 @@ class Biblioteca{
 
   // --------------------------------- BUSCAR LIBROS ----------------------------------------
 
-  function buscarLibros()
+    public function buscarLibros()
   {
       // Recuperamos el texto de búsqueda de la variable de formulario
       $textoBusqueda = $_REQUEST["textoBusqueda"];
@@ -299,7 +299,7 @@ class Biblioteca{
   }
   // --------------------------------- FORMULARIO Insetar Autores ----------------------------------------
 
-  function formularioInsertarAutores()
+  public function formularioInsertarAutores()
   {
       echo "<h1>Insertar autores</h1>";
 
@@ -315,7 +315,7 @@ class Biblioteca{
   }
   // --------------------------------- INSERTAR autores ----------------------------------------
 
-  function insertarAutor()
+  public function insertarAutor()
   {
       echo "<h1>Alta de autores</h1>";
 
