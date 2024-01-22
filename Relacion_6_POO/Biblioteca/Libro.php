@@ -1,12 +1,14 @@
 <?php
 class Libro{
   //Atributos
-  public $titulo;
-  public $genero;
-  public $pais;
-  public $año;
-  public $numPaginas;
-
+  private $titulo;
+  private $genero;
+  private $pais;
+  private $año;
+  private $numPaginas;
+  private $idLibro;
+  private $autores = array();
+  
   //Constructor
   /*public function __construct($titulo,$genero, $pais, $año, $numPaginas){
     $this -> titulo = $titulo;
@@ -56,5 +58,23 @@ class Libro{
 
   public function setNumPaginas($numPaginas){
     $this -> numPaginas = $numPaginas;
+  }
+
+  public function getIdLibro(){
+    return $this -> idLibro;
+  }
+  public function setIdLibro($idLibro){ 
+    $this -> idLibro = $idLibro;
+  }
+
+  public function getAutores(){
+    $nombreApellidosAutores="";
+    foreach($this -> autores as $autor){
+      $nombreApellidosAutores .= $autor -> getNombre() . " " . $autor -> getApellidos() . ", ";
+    }
+    //return "pepe perez, antonio dominguez";
+  }
+  public function setAutores($autor){
+    $this -> autores[] = $autor;
   }
 }

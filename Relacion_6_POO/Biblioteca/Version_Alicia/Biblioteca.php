@@ -1,5 +1,6 @@
 <?php
 include_once("../Libro.php");
+include_once("../Autor.php");
 class Biblioteca{
 
   private $db=null;
@@ -14,10 +15,7 @@ class Biblioteca{
       echo "<h1>Biblioteca</h1>";
 
       // Buscamos todos los libros de la biblioteca
-      if ($result = $this->db->query("SELECT * FROM libros
-              INNER JOIN escriben ON libros.idLibro = escriben.idLibro
-              INNER JOIN personas ON escriben.idPersona = personas.idPersona
-              ORDER BY libros.titulo")) {
+      if ($result = $this->db->query("SELECT * FROM libros ORDER BY libros.titulo")) {
 
           // La consulta se ha ejecutado con éxito. Vamos a ver si contiene registros
           if ($result->num_rows != 0) {
@@ -32,16 +30,26 @@ class Biblioteca{
 
               // Ahora, la tabla con los datos de los libros
               echo "<table border ='1'>";
-              while ($fila = $result->fetch_object("Libro")) {
+              while ($libro= $result->fetch_object("Libro")) {
                   echo "<tr>";
-                  echo "<td>" . $fila->titulo . "</td>";
-                  echo "<td>" . $fila->genero. "</td>";
-                  echo "<td>" . $fila->numPaginas . "</td>";
-                  echo "<td>" . $fila->año . "</td>";
-                  echo "<td>" . $fila->nombre . "</td>";
-                  echo "<td>" . $fila->apellido . "</td>";
-                  echo "<td><a href='index.php?action=formularioModificarLibro&idLibro=" . $fila->idLibro . "'>Modificar</a></td>";
-                  echo "<td><a href='index.php?action=borrarLibro&idLibro=" . $fila->idLibro . "'>Borrar</a></td>";
+                  echo "<td>" . $libro->getTitulo() . "</td>";
+                  echo "<td>" . $libro->getGenero(). "</td>";
+                  echo "<td>" . $libro->getNumPaginas() . "</td>";
+                  echo "<td>" . $libro->getAño() . "</td>";
+                  
+                  if ($result = $this->db->query("SELECT * FROM personas WHERE idLibro = " . $libro->getIdLibro())) {
+                    while ($autor = $result->fetch_object("Autor")){
+                      echo "<td>" . $libro;
+                    }
+
+                  while ($autor = $result->fetch_object("Autor")){
+                    echo "<td>" . $libro->setAutores($autor);
+                  /* echo "<td>" . $linea->getNombre() . "</td>";
+                  echo "<td>" . $linea->getApellido() . "</td>";*/
+                  }
+                }
+                  echo "<td><a href='index.php?action=formularioModificarLibro&idLibro=" . $libro->getIdLibro() . "'>Modificar</a></td>";
+                  echo "<td><a href='index.php?action=borrarLibro&idLibro=" . $libro->getIdLibro() . "'>Borrar</a></td>";
                   echo "</tr>";
               }
               echo "</table>";

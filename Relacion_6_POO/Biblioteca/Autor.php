@@ -6,10 +6,8 @@ class Autor{
 
 
   //Constructor
-  public function __construct($nombre,$apellido){
-    $this -> nombre = $nombre;
-    $this -> apellido = $apellido;
-  }
+  public function __construct(){}
+  
 
   //Métodos
   public function getNombre(){
