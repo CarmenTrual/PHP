@@ -11,7 +11,7 @@ class TareaController {
         }
 
         // --------------------------------- MOSTRAR LISTA DE TAREAS ----------------------------------------
-        public function mostrarListaTarea() {
+        public function mostrarListaTareas() {
             $data["listaTareas"] = $this->tarea->getAll();
             View::render("tarea/all", $data);
         }
