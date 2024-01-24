@@ -2,7 +2,7 @@
 // VISTA PARA INSERCIÓN DE Personas
 
 if (isset($persona)) {   
-    echo "<h1>Modificación de libros</h1>";
+    echo "<h1>Modificación de tareas</h1>";
 } else {
     echo "<h1>Inserción de personas</h1>";
 }

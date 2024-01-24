@@ -27,6 +27,7 @@ class Model {
   } 
 
   public function delete($id) {
+    
     $result = $this->db->dataManipulation("DELETE FROM ".$this->table." WHERE ".$this->idColumn." = $id");
     return $result;
   }
