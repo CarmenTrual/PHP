@@ -56,7 +56,7 @@ class Tarea extends Model
   {
     $ok = $this->db->dataManipulation("UPDATE tarea SET
                         titulo = '$titulo',
-                        descripcion = '$descripcion',
+                        descripcion = '$descripcion'
                         WHERE id = '$id'");
     return $ok;
   }

@@ -69,13 +69,25 @@ class TareaController {
 
 // --------------------------------- MODIFICAR TAREA ----------------------------------------
   public function modificarTarea() {
-    // Primero, recuperamos todos los datos del formulario
+    // Primero, verificamos que todos los datos del formulario estén presentes
+    if (!isset($_REQUEST["id"]) || !isset($_REQUEST["titulo"]) || !isset($_REQUEST["descripcion"])) {
+      // Manejo de errores
+      die("Faltan datos del formulario");
+  }
+
+    // Recuperamos todos los datos del formulario
     $id = $_REQUEST["id"];
     $titulo = $_REQUEST["titulo"];
     $descripcion = $_REQUEST["descripcion"];
 
     // Pedimos al modelo que haga el update
     $result = $this->tarea->update($id, $titulo, $descripcion);
+
+    // Verificamos el resultado de la actualización
+    if (!$result) {
+      // Aquí puedes manejar el error como prefieras
+      die("Error al actualizar.");
+  }
     // Eliminamos todos los autores asociados con el libro en "escriben"
     //$result = $this->libro->deleteAutores($idLibro);
 
