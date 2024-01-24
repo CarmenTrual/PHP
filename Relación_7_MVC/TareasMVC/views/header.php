@@ -1,26 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-</head>
+<?php
+session_start(); 
 
-<body>
-  <h1>MIS TAREAS</h1>
-  <!-- si hay usuario en la sesion(comprobar y si no hay mandar al login)-->
-  <?php /*if(isset($_SESSION['usuario'])): 
-    ?>
-    <p>Hola <?= $_SESSION['usuario'] ?></p>
-    <a href="logout.php">Cerrar sesión</a>
-    <?php else: ?>
-    <a href="login.php">Iniciar sesión</a>
-    <?php endif; ?>
-</body>
-</html>
+//Comprobamos si hay un usuario en la sesión
+if(isset($_SESSION['usuario'])) { 
+  // Si hay, mostrar la página de tareas
+  echo "<h1>MIS TAREAS</h1>";
+} else {
+  // Si no hay, mandamos al login
+  header("Location: login.php");
+}
+?>
 
-    <?php 
-    //si no hay usuario en la sesion(comprobar y si no hay mandar al login)
-    if(!isset($_SESSION['usuario'])){
-      header('Location: login.php');
-      exit;
-    }*/
-    ?>

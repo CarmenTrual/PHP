@@ -18,7 +18,7 @@ class TareaController {
 
 // --------------------------------- FORMULARIO ALTA DE TAREAS ----------------------------------------
 
-  public function formularioInsertarTareas() {
+  public function formularioInsertarTarea() {
     $data["tareas"] = $this->tarea->getAll();
     View::render("tarea/form", $data);
   }
@@ -94,6 +94,7 @@ class TareaController {
     // Ya podemos insertar todos los autores junto con el libro en "escriben"
     //$result = $this->libro->insertAutores($idLibro, $autores);
 
+    // Recuperamos todas las tareas de la base de datos y las mostramos en la vista "tarea/all"
     $data["listaTareas"] = $this->tarea->getAll();
     View::render("tarea/all", $data);
   }

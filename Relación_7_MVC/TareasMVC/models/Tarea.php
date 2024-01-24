@@ -45,8 +45,10 @@ class Tarea extends Model
   public function deleteTarea($id)
   {
     $correctos = 0;
-    $sql = "DELETE FROM usuarios_tarea WHERE iodtarea = $id";
+    //Borramos los registros correspondientes en la tabla usuarios_tarea
+    $sql = "DELETE FROM usuarios_tarea WHERE tarea = $id";
     $correctos = $this->db->dataManipulation($sql);
+    //Borramos la tarea
     parent::delete($id);
     return $correctos;
   }
