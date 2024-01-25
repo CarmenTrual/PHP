@@ -22,8 +22,7 @@ $descripcion = $tarea->descripcion ?? "";
 echo "<form action = 'index.php' method = 'get'>
         <input type='hidden' name='id' value='".$id."'>
         Título:<input type='text' name='titulo' value='".$titulo."'><br>
-        Descripción:<input type='text' name='descripcion' value='".$descripcion."'><br>
->";
+        Descripción:<input type='text' name='descripcion' value='".$descripcion."'><br>";
 
 /*foreach ($todosLosAutores as $fila) {
     $idsAutorestarea = array_map(function ($autortarea) {
