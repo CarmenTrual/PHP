@@ -9,5 +9,5 @@ if(isset($_SESSION['usuario'])) {
   // Si no hay, mandamos al login
   header("Location: login.php");
 }*/
-?>
+
 
