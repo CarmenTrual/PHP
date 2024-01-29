@@ -2,19 +2,17 @@
 class UsuarioController {
   public function login() {
     //Archivo con la conexión a la base de datos con mysqli
-    require '../../Db.php';
+    require './ConexionBBDD/conexion.php';
 
     $mensajeError = '';
-echo "hola";
+
     //Comprobar si se ha enviado el formulario
     if (isset($_POST['usuario']) && isset($_POST['password'])) {
-
       $usuario = $_POST['usuario'];
       $password = $_POST['password'];
 
       // Consultar si existe el usuario en la base de datos
       $consulta = $conexion->stmt_init();
-      echo "SELECT * FROM usuarios WHERE usuario = ?";
       $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
       $consulta->bind_param('s', $usuario);
       $consulta->execute();

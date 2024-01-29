@@ -14,7 +14,7 @@
     <!-- Mensajes de error -->
     <?php if (isset($mensajeError)) echo "<p class='mensaje-error'>$mensajeError</p>"; ?>
 
-    <form action="login.php" method="post">
+    <form action="Login.php" method="post">
       <div class="campo-formulario">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario" required>
