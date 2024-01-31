@@ -1,11 +1,15 @@
 <?
 class UsuarioController {
+  //instancia de la clase Db
+  private $db;
+  public function __construct() {
+    $this->db = new Db(); 
+  }
   public function login() {
     //Archivo con la conexión a la base de datos con mysqli
-    require '../../Db.php';
+    require_once '../../Db.php';
 
     $mensajeError = '';
-echo "hola";
     //Comprobar si se ha enviado el formulario
     if (isset($_POST['usuario']) && isset($_POST['password'])) {
 
@@ -13,34 +17,26 @@ echo "hola";
       $password = $_POST['password'];
 
       // Consultar si existe el usuario en la base de datos
-      $consulta = $conexion->stmt_init();
-      echo "SELECT * FROM usuarios WHERE usuario = ?";
-      $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
-      $consulta->bind_param('s', $usuario);
-      $consulta->execute();
-      $resultado = $consulta->get_result();
+      $resultado = $this->db->dataQuery("SELECT * FROM usuarios WHERE usuario = '$usuario'");
 
       // Verificar si encontramos al usuario
-      if ($fila = $resultado->fetch_assoc()) {
-        // Verificar si la contraseña es correcta
-        if (password_verify($password, $fila['password'])){
-          // Si es correcto, guardamos la información del usuario en la sesión
-          $_SESSION['usuario_id'] = $fila['id'];
-          $_SESSION['usuario_nombre'] = $fila['usuario'];
+      if (is_array($resultado) && count($resultado) > 0) {
+        $fila = $resultado[0];
 
-          // Redirigimos al usuario a la página de tareas pendientes
-          header('Location: index.php');
+        // Verificar si la contraseña es correcta
+        if (password_verify($password, $fila->password)){
+          $_SESSION['usuario_id'] = $fila->id;
+          $_SESSION['usuario_nombre'] = $fila->usuario;
+
+          header('Location: /PHP/Relación_7_MVC/TareasMVC/index.php');
           exit;
         } else {
-          // Mensaje de error si la contraseña es incorrecta
           $mensajeError = "La contraseña es incorrecta.";
         }
       } else {
-        // Mensaje de error si el usuario no existe en la base de datos
         $mensajeError = "El usuario no se encuentra registrado.";
       }
-      $consulta->close();
     }
-    require './views/login/view.php';
+    require_once './view.php';
   }
 }

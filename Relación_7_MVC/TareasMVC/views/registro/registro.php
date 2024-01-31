@@ -9,7 +9,7 @@ if (isset($_SESSION['usuario_id'])) {
 }
 
 // Aquí va el archivo con la conexión a la base de datos con mysqli
-require './ConexionBBDD/conexion.php';
+require_once '../../Db.php';
 
 $mensajeError = '';
 
@@ -52,4 +52,4 @@ if (isset($_POST['usuario']) && isset($_POST['password']) && isset($_POST['passw
     $mensajeError = "Las contraseñas no coinciden.";
   }
 }
-require("./views/registro/view.php");
+require_once("./views/registro/view.php");

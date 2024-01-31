@@ -2,7 +2,7 @@
 
 // MODELO DE TAREAS
 
-include_once "model.php";
+require_once "model.php";
 
 class Tarea extends Model
 {

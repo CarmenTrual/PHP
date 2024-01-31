@@ -1,6 +1,6 @@
 <?php
 session_start();
-  include_once("TareaController.php");  
+  require_once("TareaController.php");  
 
   // Miramos el valor de la variable "action", si existe. Si no, le asignamos una acción por defecto
     if (isset($_REQUEST["action"])) {

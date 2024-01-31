@@ -2,7 +2,7 @@
 
 // MODELO DE Usuario
 
-include_once "model.php";
+require_once "model.php";
 
 class Usuario extends Model {
 

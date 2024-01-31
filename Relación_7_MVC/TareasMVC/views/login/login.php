@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-require '../../Db.php';
-require '../../UsuarioController.php';
-echo "hola2";
+require_once '../../Db.php';
+require_once '../../UsuarioController.php';
 $controller = new UsuarioController();
 $controller->login();

@@ -1,6 +1,6 @@
 <?php
-include_once("models/Tarea.php");  // Modelos
-include_once("View.php");          // Plantilla de vista
+require_once("models/Tarea.php");  // Modelos
+require_once("View.php");          // Plantilla de vista
 
 class TareaController {
   private $db;             // Conexión con la base de datos
@@ -38,7 +38,6 @@ class TareaController {
 
 // --------------------------------- BORRAR TAREA ----------------------------------------
   public function borrarTarea() {
-    echo "hola";
     // Recuperamos el id de la tarea que hay que borrar
     $id = $_REQUEST["id"];
     // Pedimos al modelo que intente borrar la tarea
