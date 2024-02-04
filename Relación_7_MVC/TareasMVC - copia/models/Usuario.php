@@ -21,7 +21,7 @@ class Usuario extends Model {
   // Verifica la contraseña de un usuario
   public function verificarContraseña($usuario, $contraseña) {
     $usuario = $this->getUsuario($usuario);
-    if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
+    if ($usuario && password_verify($contraseña, $usuario['password'])) {
       return true;
     } else {
       return false;
@@ -30,6 +30,6 @@ class Usuario extends Model {
 
   // Inserta un usuario. Devuelve 1 si tiene éxito o 0 si falla.
   public function insert($usuario, $contraseña){
-    return $this->db->dataManipulation("INSERT INTO usuarios (usuario, contraseña) VALUES ('$usuario', '$contraseña')");
+    return $this->db->dataManipulation("INSERT INTO usuarios (usuario, password) VALUES ('$usuario', '$contraseña')");
   }
 }

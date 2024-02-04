@@ -22,11 +22,18 @@ class Tarea extends Model
     return $result[0]->ultimoIdTarea;
   }
 
-  // Inserta una tarea. Devuelve 1 si tiene éxito o 0 si falla.
-  public function insert($titulo, $descripcion)
-  {
-    return $this->db->dataManipulation("INSERT INTO tarea (titulo,descripcion) VALUES ('$titulo','$descripcion')");
-  }
+// Inserta la relación entre la tarea y el usuario en la tabla usuarios_tarea
+public function insertRelacionUsuario($tareaId, $usuarioId) {
+  $sql = "INSERT INTO usuarios_tarea (tarea, usuario) VALUES ('$tareaId', '$usuarioId')";
+  return $this->db->dataManipulation($sql);
+}
+
+// Inserta una tarea asociada a un usuario. Devuelve 1 si tiene éxito o 0 si falla.
+public function insert($titulo, $descripcion) {
+  $sql = "INSERT INTO tarea (titulo, descripcion) VALUES ('$titulo', '$descripcion')";
+  return $this->db->dataManipulation($sql);
+}
+
 
 // Borrar tarea.
   public function deleteTarea($id)
@@ -60,5 +67,18 @@ class Tarea extends Model
 					            OR tarea.descripcion LIKE '%$textoBusqueda%'
 					            ORDER BY tarea.titulo");
     return $result;
+  }
+
+  // Obtener las tareas del usuario logueado
+  public function tareasDelUsuario($usuarioId){
+    // Realizamos una consulta SQL que selecciona las tareas del usuario actual
+    // mediante un JOIN entre las tablas tarea y usuarios_tarea
+    // utilizando la relación entre id y tarea.
+    $sql = "SELECT tarea.* FROM tarea
+          JOIN usuarios_tarea ON tarea.id = usuarios_tarea.tarea
+          WHERE usuarios_tarea.usuario = '$usuarioId'";
+
+    // Ejecutamos la consulta y devolvemos el resultado
+    return $this->db->dataQuery($sql);
   }
 }

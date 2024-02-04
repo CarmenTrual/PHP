@@ -10,12 +10,13 @@ if (isset($_SESSION['usuario_id'])) {
 
 // Aquí va el archivo con la conexión a la base de datos con mysqli
 require_once '../../Db.php';
+$db = new Db();
 
 $mensajeError = '';
 
 // Comprobar si se ha enviado el formulario
 if (isset($_POST['usuario']) && isset($_POST['password']) && isset($_POST['password2'])) {
-  //Almacenar los datos
+  // Almacenar los datos
   $usuario = $_POST['usuario'];
   $password = $_POST['password'];
   $password2 = $_POST['password2'];
@@ -24,22 +25,17 @@ if (isset($_POST['usuario']) && isset($_POST['password']) && isset($_POST['passw
   if ($password === $password2) {
     try {
       // Consultar si existe el usuario 
-      $consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
-      $consulta->bind_param('s', $usuario);
-      $consulta->execute();
-      $resultado = $consulta->get_result();
+      $resultado = $db->dataQuery("SELECT * FROM usuarios WHERE usuario = '$usuario'");
+
       // Si existe, salta mensaje de error
-      if ($resultado->num_rows > 0) {
+      if (!empty($resultado)) {
         $mensajeError = "El usuario ya está registrado.";
       } else {
-        // Encriptar la contraseña y registrar el nuevo usuario
+        // Si no existe, encriptar la contraseña y registrar el nuevo usuario en la bbdd
         $passwordEncriptada = password_hash($password, PASSWORD_DEFAULT);
-        $consulta = $conexion->prepare("INSERT INTO usuarios (usuario, password) VALUES (?, ?)");
-        $consulta->bind_param('ss', $usuario, $passwordEncriptada);
-        $consulta->execute();
-
-        if ($consulta->affected_rows > 0) {
-          header('Location: login.php');
+        $consulta = $db->dataManipulation("INSERT INTO usuarios (usuario, password) VALUES ('$usuario', '$passwordEncriptada')");
+        if ($consulta > 0) {
+          header('Location: ../login/login.php');
           exit;
         } else {
           $mensajeError = "Error al registrar el usuario.";
@@ -52,4 +48,4 @@ if (isset($_POST['usuario']) && isset($_POST['password']) && isset($_POST['passw
     $mensajeError = "Las contraseñas no coinciden.";
   }
 }
-require_once("./views/registro/view.php");
+require_once("./view.php");

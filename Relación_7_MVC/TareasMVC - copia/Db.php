@@ -28,22 +28,41 @@ class Db{
   }
 
   /**
+   * Devuelve información sobre el último error de la base de datos.
+   * @return string Descripción del error.
+   */
+  public function getError() {
+    return $this->db->error;
+  }
+
+  /**
    * Lanza una consulta (SELECT) contra la base de datos.
    * ¡Ojo! Este método solo funcionará con sentencias SELECT.
    * @param $sql El código de la consulta que se quiere lanzar
    * @return Un array bidimensional con los resultados de la consulta (estará vacío si la consulta no devolvió nada)
    */
   function dataQuery($sql)
-  {
+{
+    // Ejecutamos la consulta SQL
     $res = $this->db->query($sql);
-    // Ahora vamos a convertir el resultado en un array convencional de PHP antes de devolverlo
-    $resArray = array();
-    while ($fila = $res->fetch_object()) {
-      $resArray[] = $fila;
-    }
-    return $resArray;
-  }
 
+    // Verificamos si hubo algún error en la consulta
+    if (!$res) {
+        // Si hay un error, mostramos un mensaje detallado con el error de MySQL y la consulta que falló
+        die("Error en la consulta: " . $this->db->error . " SQL: " . $sql);
+    }
+
+    // Inicializamos un array para almacenar los resultados de la consulta
+    $resArray = array();
+
+    // Transformamos los resultados en un array de PHP
+    while ($fila = $res->fetch_object()) {
+        $resArray[] = $fila;
+    }
+
+    // Devolvemos el array con los resultados de la consulta
+    return $resArray;
+}
   /**
    * Lanza una sentencia de manipulación de datos contra la base de datos.
    * ¡Ojo! Este método solo funcionará con sentencias INSERT, UPDATE, DELETE y similares.
@@ -52,7 +71,14 @@ class Db{
    */
   function dataManipulation($sql)
   {
-    $this->db->query($sql);
+    // Ejecutamos la consulta SQL
+    $result = $this->db->query($sql);
+    // Verificamos si hubo algún error en la consulta
+    if ($result === false) {
+        // Si hay un error, mostramos un mensaje detallado con el error de MySQL y la consulta que falló
+        die("Error en la consulta: " . $this->db->error . " SQL: " . $sql);
+    }
+    // Devolvemos el número de filas afectadas por la consulta
     return $this->db->affected_rows;
   }
 }

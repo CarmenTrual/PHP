@@ -17,7 +17,7 @@ $titulo = $tarea->titulo ?? "";
 $descripcion = $tarea->descripcion ?? "";
 
 // Creamos el formulario con los campos de la tarea
-echo "<form action = 'index.php' method = 'get'>
+echo "<form action = 'index.php' method = 'post'>
     <input type='hidden' name='id' value='".$id."'>
     Título:<input type='text' name='titulo' value='".$titulo."'><br>
     Descripción:<input type='text' name='descripcion' value='".$descripcion."'><br>";

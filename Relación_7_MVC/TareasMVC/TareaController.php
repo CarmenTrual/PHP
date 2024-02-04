@@ -11,39 +11,68 @@ class TareaController {
     }
 
 // --------------------------------- MOSTRAR LISTA DE TAREAS ----------------------------------------
-  public function mostrarListaTareas() {
-    $data["listaTareas"] = $this->tarea->getAll();
-    View::render("tarea/all", $data);
-  }
+public function mostrarListaTareas() {
+  // Obtener el ID del usuario logueado desde la sesión
+  $usuarioId = $_SESSION['usuario_id'];
+
+  // Obtener solo las tareas del usuario logueado
+  $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
+  
+  View::render("tarea/all", $data);
+}
+
 
 // --------------------------------- FORMULARIO ALTA DE TAREAS ----------------------------------------
 
   public function formularioInsertarTarea() {
-    $data["tareas"] = $this->tarea->getAll();
+    // Obtener solo las tareas del usuario logueado
+    $data["tareas"] = $this->tarea->tareasDelUsuario($_SESSION["usuario_id"]);
     View::render("tarea/form", $data);
   }
 
 // --------------------------------- INSERTAR TAREAS ----------------------------------------
 
-  public function insertarTarea() {
-    // Primero, recuperamos todos los datos del formulario
-    $titulo = $_REQUEST["titulo"];
-    $descripcion = $_REQUEST["descripcion"];          
+public function insertarTarea() {
+  // Primero, recuperamos todos los datos del formulario
+  $titulo = $_REQUEST["titulo"];
+  $descripcion = $_REQUEST["descripcion"];
 
-    $result = $this->tarea->insert($titulo, $descripcion);
-    
-    $data["listaTareas"] = $this->tarea->getAll();
+  // Obtener el ID del usuario logueado desde la sesión
+  $usuarioId = $_SESSION['usuario_id'];
+
+  // Mensaje de depuración
+  echo "Antes de insertar la tarea. Usuario ID: $usuarioId"; 
+
+  // Insertar la tarea asociada al usuario logueado
+  $result = $this->tarea->insert($titulo, $descripcion);
+
+  // Mensaje de depuración
+  echo "Después de insertar la tarea. Resultado: $result";
+
+  if ($result) {
+    // Obtener el ID de la tarea recién insertada
+    $tareaId = $this->tarea->getMaxId();
+    // Insertar la relación entre la tarea y el usuario en usuarios_tarea
+    $this->tarea->insertRelacionUsuario($tareaId, $usuarioId);
+
+    // Mostramos la lista de tareas actualizada del usuario logueado
+    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
     View::render("tarea/all", $data);
-  }
+  } 
+}
 
 // --------------------------------- BORRAR TAREA ----------------------------------------
   public function borrarTarea() {
     // Recuperamos el id de la tarea que hay que borrar
     $id = $_REQUEST["id"];
+
+    // Obtener el ID del usuario logueado desde la sesión
+  $usuarioId = $_SESSION['usuario_id'];
+  
     // Pedimos al modelo que intente borrar la tarea
     $result = $this->tarea->deleteTarea($id);
 
-    $data["listaTareas"] = $this->tarea->getAll();
+    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
     View::render("tarea/all", $data);
   }
 
@@ -78,8 +107,9 @@ class TareaController {
       die("Error al actualizar.");
   }
 
-    // Recuperamos todas las tareas de la base de datos y las mostramos en la vista "tarea/all"
-    $data["listaTareas"] = $this->tarea->getAll();
+    // Recuperamos todas las tareas del usuario logueado y las mostramos en la vista "tarea/all"
+    $usuarioId = $_SESSION["usuario_id"]; // Obtenemos el ID del usuario logueado
+    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
     View::render("tarea/all", $data);
   }
 

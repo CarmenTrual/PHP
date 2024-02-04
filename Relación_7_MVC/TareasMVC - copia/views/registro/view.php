@@ -14,7 +14,7 @@
     <!-- Mensajes de error -->
     <?php if (!empty($mensajeError)) echo "<p class='mensaje-error'>$mensajeError</p>"; ?>
 
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login">
+    <form action="registro.php" method="POST" name="login">
       <div class="campo-formulario">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" placeholder="Usuario" required>
