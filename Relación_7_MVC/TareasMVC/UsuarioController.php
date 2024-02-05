@@ -29,7 +29,7 @@ class UsuarioController {
       $_SESSION['usuario_id'] = $fila->id;
       $_SESSION['usuario_nombre'] = $fila->usuario;
 
-      header('Location: /PHP/Relación_7_MVC/TareasMVC/index.php');
+      header('Location: ../../index.php');
       exit;
   } else {
       $mensajeError = "La contraseña es incorrecta.";
