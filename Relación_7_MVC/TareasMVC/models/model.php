@@ -14,18 +14,13 @@ class Model {
     $this->db = new Db();
   }
 
-  public function getAll() {
-
-    $list = $this->db->dataQuery("SELECT * FROM ".$this->table);
-
-    return $list;
-  }
-
+  // Obtener un registro por su ID
   public function get($id) {
     $record = $this->db->dataQuery("SELECT * FROM ".$this->table." WHERE ".$this->idColumn."= $id");
     return $record;
   } 
 
+  // Eliminar un registro por su ID
   public function delete($id) {
 
     $result = $this->db->dataManipulation("DELETE FROM ".$this->table." WHERE ".$this->idColumn." = $id");
