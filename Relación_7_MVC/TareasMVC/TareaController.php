@@ -41,13 +41,13 @@ public function insertarTarea() {
   $usuarioId = $_SESSION['usuario_id'];
 
   // Mensaje de depuración
-  echo "Antes de insertar la tarea. Usuario ID: $usuarioId"; 
+  //echo "Antes de insertar la tarea. Usuario ID: $usuarioId"; 
 
   // Insertar la tarea asociada al usuario logueado
   $result = $this->tarea->insert($titulo, $descripcion);
 
   // Mensaje de depuración
-  echo "Después de insertar la tarea. Resultado: $result";
+  //echo "Después de insertar la tarea. Resultado: $result";
 
   if ($result) {
     // Obtener el ID de la tarea recién insertada
@@ -67,14 +67,16 @@ public function insertarTarea() {
     $id = $_REQUEST["id"];
 
     // Obtener el ID del usuario logueado desde la sesión
-  $usuarioId = $_SESSION['usuario_id'];
-  
-    // Pedimos al modelo que intente borrar la tarea
-    $result = $this->tarea->deleteTarea($id);
+    $usuarioId = $_SESSION['usuario_id'];
 
+    // Llamamos a la función 
+    $this->tarea->deleteTarea($id, $usuarioId);
+
+    // Obtener las tareas actualizadas del usuario logueado y mostrarlas
     $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
     View::render("tarea/all", $data);
-  }
+}
+
 
 // --------------------------------- FORMULARIO MODIFICAR TAREA ----------------------------------------
   public function formularioModificarTarea() {
@@ -86,13 +88,12 @@ public function insertarTarea() {
   }
 
 // --------------------------------- MODIFICAR TAREA ----------------------------------------
-  public function modificarTarea() {
+  /*public function modificarTarea() {
     // Primero, verificamos que todos los datos del formulario estén presentes
     if (!isset($_REQUEST["id"]) || !isset($_REQUEST["titulo"]) || !isset($_REQUEST["descripcion"])) {
       // Manejo de errores
       die("Faltan datos del formulario");
   }
-
     // Recuperamos todos los datos del formulario
     $id = $_REQUEST["id"];
     $titulo = $_REQUEST["titulo"];
@@ -106,20 +107,58 @@ public function insertarTarea() {
       // Aquí puedes manejar el error como prefieras
       die("Error al actualizar.");
   }
-
     // Recuperamos todas las tareas del usuario logueado y las mostramos en la vista "tarea/all"
     $usuarioId = $_SESSION["usuario_id"]; // Obtenemos el ID del usuario logueado
     $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
     View::render("tarea/all", $data);
-  }
+  }*/
+
+
+  public function modificarTarea() {
+    // Verificar si el usuario está logueado
+    if (!isset($_SESSION['usuario_id'])) {
+        // Si no está logueado
+        header('Location: ../login.php');
+        exit;
+    }
+
+    // Recuperamos todos los datos del formulario
+    $id = $_REQUEST["id"];
+    $titulo = $_REQUEST["titulo"];
+    $descripcion = $_REQUEST["descripcion"];
+    $usuarioLogueado = $_SESSION["usuario_id"]; // Obtenemos el ID del usuario logueado
+
+    // Pedimos al modelo que haga la verificación y el update
+    $result = $this->tarea->update($id, $titulo, $descripcion, $usuarioLogueado);
+
+    // Verificamos el resultado de la actualización
+    if (!$result) {
+        // Aquí puedes manejar el error como prefieras
+        die("Error al actualizar.");
+    }
+
+    // Recuperamos todas las tareas del usuario logueado y las mostramos en la vista "tarea/all"
+    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioLogueado);
+    View::render("tarea/all", $data);
+}
+
+
 
 // --------------------------------- BUSCAR TAREA ----------------------------------------
-  public function buscarTarea() {
-    // Recuperamos el texto de búsqueda de la variable de formulario
-    $textoBusqueda = $_REQUEST["textoBusqueda"];
-    // Buscamos las tareas que coinciden con la búsqueda
-    $data["listaTareas"] = $this->tarea->search($textoBusqueda);
-    // Mostramos el resultado en la misma vista que la lista completa de tareas
-    View::render("tarea/all", $data);
-  }
-} 
+public function buscarTarea() {
+  // Recuperamos el texto de búsqueda de la variable de formulario
+  $textoBusqueda = $_REQUEST["textoBusqueda"];
+
+   // Verificar si el usuario está logueado
+    if (isset($_SESSION['usuario_id'])) {
+        $usuarioLogueado = $_SESSION['usuario_id'];
+
+        // Buscamos las tareas que coinciden con la búsqueda y el usuario logueado
+        $data["listaTareas"] = $this->tarea->search($textoBusqueda, $usuarioLogueado);
+
+        // Mostramos el resultado en la misma vista que la lista completa de tareas
+        View::render("tarea/all", $data);
+        return;
+    }
+  }  
+}
