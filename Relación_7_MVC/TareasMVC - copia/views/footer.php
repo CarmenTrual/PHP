@@ -1,4 +1,3 @@
-<h5>Este es el pie de página</h5>
-<h5>&copy; 2022 Yo mismo</h5>
+<h5>&copy; 2024 - Carmen Trujillo</h5>
 </body>
 </html>

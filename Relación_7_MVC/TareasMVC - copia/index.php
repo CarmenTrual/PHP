@@ -13,3 +13,8 @@ session_start();
   $controller = new TareaController();
   $controller->$action();
 ?>
+
+<!-- ponerlo, dicho por alicia - linea 6 (pero al ponerlo se me jode lo del buscador)
+/**if (!isset($_SESSION['usuario_id'])) {
+      header('Location: ././login.php');
+    }-->
