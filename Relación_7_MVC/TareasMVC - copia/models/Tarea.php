@@ -59,26 +59,31 @@ public function insert($titulo, $descripcion) {
 
   // Actualiza una tarea. Devuelve 1 si tiene éxito y 0 en caso de fallo.
   public function update($id, $titulo, $descripcion, $usuarioLogueado){
-
-    // Verificar que la tarea pertenece al usuario en sesión
-    $result = $this->db->dataQuery("
+    try {
+      // Verificar que la tarea pertenece al usuario en sesión
+      $result = $this->db->dataQuery("
         SELECT 1
         FROM tarea
         INNER JOIN usuarios_tarea ON tarea.id = usuarios_tarea.tarea
         WHERE tarea.id = '$id' AND usuarios_tarea.usuario = '$usuarioLogueado'
-    ");
-    if (!$result) {
-      // La tarea no pertenece al usuario en sesión, no se permite la modificación
-      return 0;
+      ");
+
+      if (!$result) {
+        // La tarea no pertenece al usuario en sesión, no se permite modificar.
+        return 0;
+      }
+
+      // Realizar la actualización
+      $ok = $this->db->dataManipulation("UPDATE tarea SET
+        titulo = '$titulo',
+        descripcion = '$descripcion'
+        WHERE id = '$id'");
+
+      return $ok;
+  } catch (Exception $e) {
+    // Capturar excepciones y mostrar el mensaje de error
+    die("Error al actualizar la tarea: " . $e->getMessage());
   }
-
-  // Realizar la actualización
-  $ok = $this->db->dataManipulation("UPDATE tarea SET
-      titulo = '$titulo',
-      descripcion = '$descripcion'
-      WHERE id = '$id'");
-
-  return $ok;
 }
 
 

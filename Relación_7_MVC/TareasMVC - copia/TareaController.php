@@ -21,9 +21,7 @@ public function mostrarListaTareas() {
   View::render("tarea/all", $data);
 }
 
-
 // --------------------------------- FORMULARIO ALTA DE TAREAS ----------------------------------------
-
   public function formularioInsertarTarea() {
     // Obtener solo las tareas del usuario logueado
     $data["tareas"] = $this->tarea->tareasDelUsuario($_SESSION["usuario_id"]);
@@ -31,7 +29,6 @@ public function mostrarListaTareas() {
   }
 
 // --------------------------------- INSERTAR TAREAS ----------------------------------------
-
 public function insertarTarea() {
   // Primero, recuperamos todos los datos del formulario
   $titulo = $_REQUEST["titulo"];
@@ -55,9 +52,9 @@ public function insertarTarea() {
     // Insertar la relación entre la tarea y el usuario en usuarios_tarea
     $this->tarea->insertRelacionUsuario($tareaId, $usuarioId);
 
-    // Mostramos la lista de tareas actualizada del usuario logueado
-    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
-    View::render("tarea/all", $data);
+    // Redirigir a la página que muestra la lista de tareas
+    header('Location: index.php?action=mostrarListaTareas');
+    exit;
   } 
 }
 
@@ -72,11 +69,10 @@ public function insertarTarea() {
     // Llamamos a la función 
     $this->tarea->deleteTarea($id, $usuarioId);
 
-    // Obtener las tareas actualizadas del usuario logueado y mostrarlas
-    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
-    View::render("tarea/all", $data);
+    // Redirigir a la página que muestra la lista de tareas
+    header('Location: index.php?action=mostrarListaTareas');
+    exit;
 }
-
 
 // --------------------------------- FORMULARIO MODIFICAR TAREA ----------------------------------------
   public function formularioModificarTarea() {
@@ -88,32 +84,6 @@ public function insertarTarea() {
   }
 
 // --------------------------------- MODIFICAR TAREA ----------------------------------------
-  /*public function modificarTarea() {
-    // Primero, verificamos que todos los datos del formulario estén presentes
-    if (!isset($_REQUEST["id"]) || !isset($_REQUEST["titulo"]) || !isset($_REQUEST["descripcion"])) {
-      // Manejo de errores
-      die("Faltan datos del formulario");
-  }
-    // Recuperamos todos los datos del formulario
-    $id = $_REQUEST["id"];
-    $titulo = $_REQUEST["titulo"];
-    $descripcion = $_REQUEST["descripcion"];
-
-    // Pedimos al modelo que haga el update
-    $result = $this->tarea->update($id, $titulo, $descripcion);
-
-    // Verificamos el resultado de la actualización
-    if (!$result) {
-      // Aquí puedes manejar el error como prefieras
-      die("Error al actualizar.");
-  }
-    // Recuperamos todas las tareas del usuario logueado y las mostramos en la vista "tarea/all"
-    $usuarioId = $_SESSION["usuario_id"]; // Obtenemos el ID del usuario logueado
-    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioId);
-    View::render("tarea/all", $data);
-  }*/
-
-
   public function modificarTarea() {
     // Verificar si el usuario está logueado
     if (!isset($_SESSION['usuario_id'])) {
@@ -128,20 +98,19 @@ public function insertarTarea() {
     $descripcion = $_REQUEST["descripcion"];
     $usuarioLogueado = $_SESSION["usuario_id"]; // Obtenemos el ID del usuario logueado
 
-    // Pedimos al modelo que haga la verificación y el update
+    // Hacemos la verificación y el update
     $result = $this->tarea->update($id, $titulo, $descripcion, $usuarioLogueado);
 
     // Verificamos el resultado de la actualización
     if (!$result) {
-        // Aquí puedes manejar el error como prefieras
-        die("Error al actualizar.");
+        // Manejo de error 
+        die("Error al actualizar la tarea.");
     }
 
-    // Recuperamos todas las tareas del usuario logueado y las mostramos en la vista "tarea/all"
-    $data["listaTareas"] = $this->tarea->tareasDelUsuario($usuarioLogueado);
-    View::render("tarea/all", $data);
+    // Redirigir a la página que muestra la lista de tareas
+    header('Location: index.php?action=mostrarListaTareas');
+    exit;
 }
-
 
 
 // --------------------------------- BUSCAR TAREA ----------------------------------------
