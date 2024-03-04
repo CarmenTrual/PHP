@@ -32,14 +32,14 @@ class TareasController extends Controller
   /**
    * Store a newly created resource in storage.
    */
-  public function store(Request $request)
+  public function store(Request $request)// hay que poner TareasRequest en el parametro de la petición
   {
     $tareas = new Tareas();
     $tareas->titulo = $request->titulo;
     $tareas->descripcion = $request->descripcion;
     $tareas->save();
 
-    $tareas->etiquetas()->attach($request->tareas);
+    $tareas->etiquetas()->attach($request->etiquetas);
 
     return new TareasResource($tareas);
   }
