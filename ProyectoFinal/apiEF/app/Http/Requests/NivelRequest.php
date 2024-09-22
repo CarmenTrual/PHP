@@ -11,7 +11,8 @@ class NivelRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Permite la solicitud para cualquier usuario autenticado
+        //return auth()->check(); // Autoriza la solicitud si está logueado
     }
 
     /**
@@ -22,7 +23,7 @@ class NivelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nivel' => 'required|string|max:20',
         ];
     }
 }

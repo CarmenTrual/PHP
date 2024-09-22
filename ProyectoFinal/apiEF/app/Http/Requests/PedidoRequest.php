@@ -11,7 +11,8 @@ class PedidoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Permite la solicitud para cualquier usuario autenticado
+        //return auth()->check(); // Autoriza la solicitud si está logueado
     }
 
     /**
@@ -22,7 +23,11 @@ class PedidoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'id_usuario' => 'required|integer|exists:usuarios,id_usuario',
+            'id_curso' => 'required|integer|exists:cursos,id_curso',
+            'cantidad' => 'required|integer|min:1',
+            'estado' => 'required|string|max:20',
+            'fecha' => 'required|date',
         ];
     }
 }

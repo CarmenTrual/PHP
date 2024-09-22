@@ -11,7 +11,8 @@ class UserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true; // Permite la solicitud para cualquier usuario autenticado
+        //return auth()->check(); // Autoriza la solicitud si está logueado
     }
 
     /**
@@ -22,7 +23,10 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre_usuario' => 'required|string|max:30',
+            'contraseña' => 'required|string|max:15',
+            'apellidos' => 'required|string|max:30',
+            'email' => 'required|email|string|max:30|unique:usuarios,email',
         ];
     }
 }
