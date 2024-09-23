@@ -30,6 +30,7 @@ Route::resource('cursos', CursoController::class);
 Route::resource('niveles', NivelController::class);
 Route::resource('pedidos', PedidoController::class);
 Route::resource('users', UserController::class);
+//Route::get('/categorias', CategoriaController::class);
 
 // Rutas adicionales para autenticación
 Route::post('/register', [AuthController::class, 'register']);

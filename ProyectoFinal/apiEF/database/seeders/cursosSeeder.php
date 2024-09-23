@@ -15,14 +15,14 @@ class cursosSeeder extends Seeder
     {
         DB::table('cursos')->insert([
             [
-                'id_catergoria' => 1,
+                'id_categoria' => 1,
                 'id_nivel' => 1,
                 'nombre_curso' => 'Bulerías',
                 'descripcion' => 'Aprende el cante por bulerías',
                 'precio' => 69.99,
             ],
             [
-                'id_catergoria' => 2,
+                'id_categoria' => 2,
                 'id_nivel' => 2,
                 'nombre_curso' => 'Soleá',
                 'descripcion' => 'Aprende a bailar por soleá',
