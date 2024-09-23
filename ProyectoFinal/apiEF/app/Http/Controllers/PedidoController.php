@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Pedido;
 use Illuminate\Http\Request;
+use App\Http\Requests\PedidoRequest;
+use App\Http\Resources\PedidoResource;
+use Illuminate\Http\Response;
 
 class PedidoController extends Controller
 {
@@ -12,7 +15,8 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        // Obtiene todos los pedidos de la base de datos y los devuelve en formato JSON.
+        return PedidoResource::collection(Pedido::all());
     }
 
     /**
@@ -26,9 +30,11 @@ class PedidoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PedidoRequest $request)
     {
-        //
+        // Crea un nuevo pedido con los datos que vienen en la solicitud y lo guarda en la base de datos.
+        $pedido = Pedido::create($request->validated());
+        return new PedidoResource($pedido);
     }
 
     /**
@@ -36,7 +42,8 @@ class PedidoController extends Controller
      */
     public function show(Pedido $pedido)
     {
-        //
+        // Obtiene un pedido específico de la base de datos y lo devuelve en formato JSON.
+        return new PedidoResource($pedido);
     }
 
     /**
@@ -50,9 +57,11 @@ class PedidoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pedido $pedido)
+    public function update(PedidoRequest $request, Pedido $pedido)
     {
-        //
+        // Actualiza los datos de un pedido existente con los datos que vienen en la solicitud.
+        $pedido->update($request->validated());
+        return new PedidoResource($pedido);
     }
 
     /**
@@ -60,6 +69,8 @@ class PedidoController extends Controller
      */
     public function destroy(Pedido $pedido)
     {
-        //
+        // Elimina un pedido específico de la base de datos.
+        $pedido->delete();
+        return response()->json(null, 204);
     }
 }

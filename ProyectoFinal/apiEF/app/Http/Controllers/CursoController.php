@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use Illuminate\Http\Request;
+use App\Http\Requests\CursoRequest;
+use App\Http\Resources\CursoResource;
 
 class CursoController extends Controller
 {
@@ -12,7 +14,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        // Obtiene todos los cursos de la base de datos y los devuelve en formato JSON.
+        return CursoResource::collection(Curso::all());
     }
 
     /**
@@ -26,9 +29,11 @@ class CursoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CursoRequest $request)
     {
-        //
+        // Crea un nuevo curso con los datos que vienen en la solicitud y lo guarda en la base de datos.
+        $curso = Curso::create($request->validated());
+        return new CursoResource($curso);
     }
 
     /**
@@ -36,7 +41,8 @@ class CursoController extends Controller
      */
     public function show(Curso $curso)
     {
-        //
+        // Obtiene un curso específico de la base de datos y lo devuelve en formato JSON.
+        return new CursoResource($curso);
     }
 
     /**
@@ -50,9 +56,11 @@ class CursoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Curso $curso)
+    public function update(CursoRequest $request, Curso $curso)
     {
-        //
+        // Actualiza los datos de un curso existente con los datos que vienen en la solicitud.
+        $curso->update($request->validated());
+        return new CursoResource($curso);
     }
 
     /**
@@ -60,6 +68,8 @@ class CursoController extends Controller
      */
     public function destroy(Curso $curso)
     {
-        //
+        // Elimina un curso específico de la base de datos.
+        $curso->delete();
+        return response()->json(null, 204);
     }
 }
