@@ -1,30 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Datos de ejemplo
-  const exampleCourses = [
-    {
-      id_curso: 1,
-      id_categoria: 2,
-      id_nivel: 1,
-      nombre_curso: "Curso de Bulerías I",
-      descripcion: "Aprende Bulerías desde cero",
-      precio: "99.95",
-      nivel: "Principiante",
-      imagen: "./img/Curso_Bulerías.jpg"
-    },
-    {
-      id_curso: 2,
-      id_categoria: 1,
-      id_nivel: 2,
-      nombre_curso: "Curso de Tangos II",
-      descripcion: "Mejora tu nivel en el estilo de los Tangos",
-      precio: "120.00",
-      nivel: "Intermedio",
-      imagen: "./img/Curso_Flamenco.jpg"
-    }
-  ];
 
-  renderCourses(exampleCourses);
-});
+// Genera cursos dinámicamente
+//document.addEventListener('DOMContentLoaded', () => {
+//  // Datos de ejemplo
+//  const exampleCourses = [
+//    {
+//      id_curso: 1,
+//      id_categoria: 2,
+//      id_nivel: 1,
+//      nombre_curso: "Curso de Bulerías I",
+//      descripcion: "Aprende Bulerías desde cero",
+//      precio: "99.95",
+//      nivel: "Principiante",
+//      imagen: "./img/Curso_Bulerías.jpg"
+//    },
+//    {
+//      id_curso: 2,
+//      id_categoria: 1,
+//      id_nivel: 2,
+//      nombre_curso: "Curso de Tangos II",
+//      descripcion: "Mejora tu nivel en el estilo de los Tangos",
+//      precio: "120.00",
+//      nivel: "Intermedio",
+//      imagen: "./img/Curso_Flamenco.jpg"
+//    }
+//  ];
+//
+//  renderCourses(exampleCourses);
+//});
+//
 
 function renderCourses(courses) {
   const container = document.getElementById('cursos-container');
