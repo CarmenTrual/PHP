@@ -1,0 +1,70 @@
+/********************************************/
+/* Pantallas de tamaño tablet (hasta 768px) */
+/********************************************/
+
+@media only screen and (max-width: 768px) {
+  /* Se reduce el tamaño de la fuente del cuerpo del documento para adaptarse a pantallas más pequeñas */
+  body {
+    font-size: 1.2rem;
+  }
+
+  /* Se ajusta el tamaño del logo para que sea más pequeño en pantallas de tamaño tablet */
+  .logo-header {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Se cambia la dirección de los elementos flexibles a columna en las secciones especificadas */
+  .flamenco-content, .historia-content, .palos-content, .compas-content, .ritmo-content, .letras-content, .baile-content {
+    flex-direction: column;
+  }
+}
+
+
+/********************************************/
+/* Pantallas de tamaño móvil (hasta 480px)  */
+/********************************************/
+
+@media only screen and (max-width: 480px) {
+  /* Se reduce aún más el tamaño de la fuente del cuerpo del documento para adaptarse a pantallas de tamaño móvil */
+  body {
+    font-size: 1rem;
+  }
+
+  /* Se ajusta aún más el tamaño del logo para que sea más pequeño en pantallas de tamaño móvil */
+  .logo-header {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Se mantiene la dirección de los elementos flexibles en columna en las secciones especificadas */
+  .flamenco-content, .historia-content, .palos-content, .compas-content, .ritmo-content, .letras-content, .baile-content {
+    flex-direction: column;
+  }
+}
+
+
+/**********************************************/
+/* Pantallas de tamaño grande (más de 1200px) */
+/**********************************************/
+
+@media only screen and (min-width: 1200px) {
+  /* Aumento el tamaño de la fuente del cuerpo del documento para pantallas más grandes */
+  body {
+    font-size: 1.6rem;
+  }
+
+  /* Ajusto el tamaño del logo para que sea más grande en pantallas de tamaño grande */
+  .logo-header {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Cambio la dirección de los elementos flexibles a fila para pantallas grandes */
+  .flamenco-content, .historia-content, .palos-content, .compas-content, .ritmo-content, .letras-content, .baile-content {
+    flex-direction: row;
+  }
+}
+
+
+

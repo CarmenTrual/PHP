@@ -14,7 +14,7 @@ class Curso extends Model
 
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'id_catergoria');
+        return $this->belongsTo(Categoria::class, 'id_categoria');
     }
 
     public function nivel()

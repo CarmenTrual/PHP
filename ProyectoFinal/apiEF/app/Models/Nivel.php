@@ -9,6 +9,8 @@ class Nivel extends Model
 {
     use HasFactory;
 
+    protected $table = 'niveles';
+
     protected $fillable = ['nivel'];
     protected $hidden = ['created_at', 'updated_at'];
 

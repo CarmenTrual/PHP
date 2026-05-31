@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     use HasFactory;
+
     protected $fillable = ['id_usuario', 'id_curso', 'cantidad', 'estado', 'fecha'];
     protected $hidden = ['created_at', 'updated_at'];
 

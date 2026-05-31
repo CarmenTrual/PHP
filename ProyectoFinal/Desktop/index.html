@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entiende el Flamenco</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Librería de iconos-->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- Enlace a favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="shortcut icon" href="./Public/img/logo4.png" />
+
+    <!-- Etiquetas SEO -->
+    <meta
+      name="description"
+      content="Entiende el flamenco es una web para apasionados del arte. Pone a su disposición todo tipo de contenido relacionado con el flamenco."
+    />
+    <meta
+      name="keywords"
+      content="Palabras clave, separadas por comas, relacionadas con tu contenido."
+    />
+    <meta name="author" content="Entiende el Flamenco." />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="stylesheet" href="./Public/Style/General.css" />
+    <link rel="stylesheet" href="./Public/Style/Index.css" />
+    <link rel="stylesheet" href="./Public/Style/Querys.css" />
+
+    <!--=============== REMIXICONS LIBRERIA DE ICONOS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Scripts con el atributo defer para que no afecte a la carga de la página  -->
+  <script src="./Public/Js/MenuHamburguesa.js" defer></script>
+  <script src="./Public/Js/Juego.js" defer></script>
+  </head>
+
+  <body>
+    <!-- CONTENIDO DE LA PÁGINA -->
+
+    <!-- Cabecera -->
+    <header>
+      <div class="menu">
+        <div class="menu-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <img
+          class="logo-header"
+          src="./Public/img/logo4.png"
+          alt="Logo de Entiende el Flamenco"
+        />
+      </div>
+      <nav class="botones-header">
+        <ul>
+          <li><a href="index.html" class="btn">Inicio</a></li>
+          <li><a href="Cursos.html" class="btn">Cursos</a></li>
+          <li><a href="btn Inicia Sesión" class="btn">Inicia Sesión</a></li>
+        </ul>
+      </nav>
+
+      <div id="menu-desplegable" class="menu-desplegable">
+        <ul>
+          <li><a href="Perfil.html">Mi perfil</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Introduccion.html">Introducción</a></li>
+          <li><a href="Historia.html">Historia</a></li>
+          <li><a href="Palos.html">Palos</a></li>
+          <li><a href="Compas.html">Compás</a></li>
+          <li><a href="Ritmo.html">Ritmo</a></li>
+          <li><a href="Cursos.html">Cursos</a></li>
+          <li><a href="Cesta.html">Cesta</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Portada -->
+    <section class="portada">     
+      <img
+        class="img-fondo"
+        src="./Public/img/PortadaInicio.jpg"
+        alt="Fondo de Entiende el Flamenco"
+      />
+    </section>
+
+        <!-- intro -->
+        <div class="title-intro">
+          <h1><b>Bienvenido a Entiende El Flamenco</b></h1>
+          <p>Si eres un apasionado del flamenco, este es tu sitio. Aquí encontrarás todo lo necesario para sumergirte en la esencia de 
+            este arte declarado patrimonio de la humanidad por la UNESCO.</p>
+            <p>Contamos con un material muy completo que se basa en gráficos, textos explicativos y numerosos audios y videos. Ya sea
+            a través de nuestros cursos o del contenido gratuito, estamos seguros de que disfrutarás del viaje hacia la comprensión 
+            del flamenco.</p>
+        </div>
+
+    <!-- Qué es el flamenco -->
+    <section class="flamenco">
+      <div class="flamenco-container">
+        <div class="flamenco-title">
+          <h2>¿QUE ES EL FLAMENCO?</h2>
+        </div>
+        <div class="flamenco-content">
+          <div class="columna-1">
+            <p>
+              El flamenco es una forma de arte española, originaria de Andalucía, que combina canto (cante), danza (baile) y música (toque). 
+              Este arte, que originalmente era la danza y música tradicional de los gitanos andaluces, ha evolucionado con el tiempo 
+              y ha sido influenciado por diversas culturas. Hoy en día, el flamenco es reconocido en todo el mundo y es apreciado por su 
+              profundidad emocional y su habilidad para expresar una amplia gama de emociones humanas.
+            </p>
+          </div>
+          <div class="columna-2">
+            <p>
+              A lo largo de los años, el flamenco ha experimentado una serie de transformaciones y fusiones, dando lugar a nuevas formas y estilos. 
+              Desde lo puro y lo antiguo hasta lo nuevo y lo fusionado, el flamenco sigue siendo un arte vivo y en constante evolución. Además, 
+              el flamenco ha trascendido las fronteras de España y ha ganado reconocimiento internacional, demostrando su universalidad y su capacidad 
+              para resonar con personas de diferentes culturas y orígenes.
+            </p>
+            <p>
+              En el flamenco, cada disciplina, ya sea el cante, el baile, el toque o la percusión, tiene su propio lugar y contribuye a la riqueza y 
+              diversidad de este arte. Artistas de flamenco, tanto del pasado como del presente, han demostrado una increíble habilidad y pasión, 
+              dejando una huella indeleble en este arte.
+            </p>
+            <P>
+              Adéntrate con nosotros en esta epectacular cultura llena de arte y duende.
+            </P>
+          </div>
+        </div>
+        <a href="Cursos.html" class="btn-page ">Aprende con nosotros</a>
+      </div>
+        </section>
+
+        <!-- Artista -->
+        <section class="Artista">
+          <div class="Artista-container">
+            <div class="Artista-title">
+              <h2>Artista Destacada</h2>
+            </div>
+            <div class="Artista-content">
+              <p>
+                En nuestra sección de los artistas más importantes del flamenco, hoy toca destacar a Carmen Amaya, considerada una de las bailaoras más influyentes del 
+                siglo XX. Nacida en el seno de una familia gitana en Barcelona, Carmen Amaya no solo dominó el baile, sino que también era una cantaora 
+                talentosa.
+              </p>
+              <p>
+                Carmen Amaya rompió barreras y desafió las convenciones de su tiempo con su estilo apasionado y enérgico de baile. Su habilidad para transmitir una amplia 
+                gama de emociones a través de sus movimientos cautivó a audiencias de todo el mundo y la estableció como una figura icónica en el mundo del flamenco.
+              </p>
+              <p>
+                Pero su talento no se limitaba al baile. También poseía una voz conmovedora y emotiva, y su cante flamenco resonaba con la misma intensidad y 
+                pasión que su baile. Su polifacética habilidad se puede ver en una escena de la película "Los Tarantos", donde se la ve bailando, cantando y haciendo 
+                compás con sus nudillos en una mesa. Esta escena demuestra la versatilidad y el talento que poseía y subraya la importancia de tener una variedad de 
+                habilidades en el flamenco.
+              </p>
+
+              <div class="Artista-video">
+                <video controls> <!-- controls para controles de usuario: play, pause, etc...-->
+                  <source src="./Public/Videos/CarmenAmaya.mp4" type="video/mp4">
+                  Tu navegador no soporta el elemento video. <!-- Mensaje de respaldo si el navegador no soporta el elemento video-->
+                </video>
+              </div>
+              <p>
+                Carmen Amaya dejó un legado duradero que sigue inspirando a artistas de flamenco de todo el mundo. Su vida y su carrera son un testimonio del poder del 
+                flamenco para mover corazones y trascender fronteras. Murió en 1963 a la edad de 45 años debido a una enfermedad renal. Su pasión por el 
+                flamenco fue tan fuerte que continuó bailando hasta el final de su vida, demostrando su dedicación y amor por este arte.
+              </p>
+            </div>
+          </div>
+        </section>
+
+    <main>
+      <!-- Juego -->
+      <section id="Juego">
+        <h2>¿Puedes adivinar el palo flamenco?</h2>
+        <audio id="audio" src="" controls></audio>
+        <div id="options">
+          <h2>Elige una respuesta:</h2>
+          <ul id="opciones-list"></ul>
+        </div>
+        <p id="message"></p>
+      </section>
+    </main>
+
+    <!-- Curiosidades -->
+    <div class="title-patronZ">
+      <h3><b>¿Sabías que...</b></h3>
+    </div>
+
+    <section id="curiosidades">
+      <div class="grid">
+        <div class="grid1 grid_item_img">
+          <img alt="Mantón de Manila" src="./Public/img/Manton.jpg" />
+        </div>
+
+        <div class="grid2 grid_item_txt grid-left">
+          <p class="texto">Codiciada prenda de vestir e ícono en el mundo 
+            del flamenco tanto como vestimenta como
+            accesorio en el baile, este chal elaborado en seda
+            se transformó en mantón con la adición de flecos y
+            bordados de flores dándole un toque único
+            y sofisticado cuya confección se ha convertido en 
+            todo un arte.</p>
+        </div>
+
+        <div class="grid3 grid_item_txt grid-right">
+          <p class="texto">A los 9 años su padre lo sacó del colegio y le
+            impuso un riguroso entrenamiento diario
+            encerrándolo en un cuarto diez horas al día para
+            que aprendiese a tocar.
+            Paco fue autodidacta, no sabía leer un
+            pentagrama, motivo por el que tuvo que
+            memorizar todo el Concierto de Aranjuez antes de
+            tocarlo, lo que demuestra su virtuosismo con la guitarra.</p>
+
+        </div>
+
+        <div class="grid4 grid_item_img">
+          <img alt="Paco de Lucía" src="./Public/img/Paco.jpg" />
+        </div>
+
+        <div class="grid5 grid_item_img">
+          <img alt=">Guitarra" src="./Public/img/Guitarra.jpg" />
+        </div>
+
+        <div class="grid6 grid_item_txt grid-left">
+          <p class="texto">Existen diferentes teorías sobre el origen de la
+          palabra “flamenco”. Una de las más extendidas es
+          que vendría del árabe “Felah-mengus”, que
+          significa “campesino errante”. Otras teorías lo
+          vinculan a la antigua Flandes o incluso a un cuchillo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Noticias -->
+      <section class="news">
+        <div class="news-header">
+          <p class ="news-title"> NOTICIAS </p>
+        </div>
+        <div class="news-container">
+          <div class="news-item">
+            <div class="item-container">
+              <img src="./Public/img/Cartel Bienal.jpeg" alt="Imagen 1" />
+              <p class="textoNoticia">
+                Todo sobre La XXIII Bienal de flamenco.<br>
+                Entradas ya a la venta.<br>
+                Programación completa.
+              </p>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="item-container">
+              <img src="./Public/img/Rey-Felipe-VI.jpg" alt="Imagen 2" />
+              <p class="textoNoticia">
+                El Rey Felipe VIº presidente de honor de los IXº Premios<br>
+                Internacionales del Flamenco “Manolo Sanlúcar”<br>
+                de la Escuela de Flamenco de Andalucía.
+              </p>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="item-container">
+              <img src="./Public/img/ballet_flamenco_andalucia_2024.jpg" alt="Imagen 3" />
+              <p class="textoNoticia">
+                “Pineda” la primera producción de Patricia Guerrero para el<br>
+                Ballet Flamenco de Andalucía se estrena este verano en el ciclo<br>
+                “Lorca y Granada en los Jardines del Generalife”.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="news-btn">
+          <button class="btn VerNoticias">Ver todas las noticias</button>
+        </div>
+      </section>
+
+    <!-- Modal Carrito -->
+    <!-- Ventana emergente que muestra los cursos añadidos al carrito -->
+    <div id="carrito-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Tu Cesta</h2>
+        <div id="carrito-items"></div>
+        <div class="carrito-total">
+          <strong>Total: </strong><span id="total">0,00€</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="parte1">
+        <div class="partegrid">
+          <div class="grid_logo">
+            <a href="#" class="footer-logo">
+              <img
+                class="logo"
+                alt="Entiene el flamenco Logo"
+                src="./Public/img/logo4.png"
+              />
+            </a>
+          </div>
+
+          <div class="grid_contac">
+            <b class="footer-contac">Contacto</b>
+            <div class="contacts">
+              <p class="email">
+                <ion-icon name="mail-outline"></ion-icon>
+                info@entiendeflamenco.com
+              </p>
+              <p class="telefono">
+                <ion-icon name="call-outline"></ion-icon>
+                666-555-444
+              </p>
+            </div>
+          </div>
+
+          <div class="grid_nav-col1">
+            <a class="footer-link" href="pedido.html">Haz tu pedido</a>
+            <a class="footer-link" href="envio.html">Condiciones de envío</a>
+            <a class="footer-link" href="nosotros.html">Sobre nosotros</a>
+          </div>
+          
+          <div class="grid_nav-col2">
+            <a class="footer-link" href="privacidad.html">Política de privacidad</a>
+            <a class="footer-link" href="terminos.html">Términos y condiciones</a>
+            <a class="footer-link" href="cookies.html">Política de cookies</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="parte2">
+        <div class="copyright">
+          &copy; 2024 Carmen Trujillo. Todos los derechos reservados.
+        </div>
+
+        <div class="social-links">
+          <a class="footer-link" href="#">
+            <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
+          </a>
+          <a class="footer-link" href="#">
+            <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
+          </a>
+          <a class="footer-link" href="#">
+            <ion-icon class="social-icon" name="logo-linkedin"></ion-icon>
+          </a>
+          <a class="footer-link" href="#">
+            <ion-icon class="social-icon" name="logo-twitter"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- <script src="./Public/Js/MenuHamburguesa.js"></script> -->
+    <!-- <script src="./Public/Js/Juego.js"></script> -->
+    <script src="./Public/Js/CarruselNoticias.js"></script>
+  </body>
+</html>
