@@ -47,7 +47,7 @@ function nuevoJuego() {
 
 // Añade un botón de reinicio al final de la sección del juego
 const restartButton = document.createElement('button');
-restartButton.textContent = 'Reiniciar juego';
+restartButton.textContent = 'Jugar de nuevo';
 restartButton.id = 'restart-button'; // Añade un id al botón para controlarlo en el css
 document.getElementById('Juego').appendChild(restartButton);
 

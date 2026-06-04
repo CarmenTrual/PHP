@@ -26,26 +26,24 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         // Convertimos la respuesta de Laravel a JSON
         const data = await response.json();
 
-
+            // Si el login es correcto
         if (response.ok) {
             // Si el login está bien, guarda el token en localStorage para recordar la sesión.
             localStorage.setItem("token", data.access_token);
 
-            alert("Sesión iniciada correctamente");
-
-            // Redirige al usuario a la página principal
+            // Redirigimos inmediatamente
             window.location.href = "index.html";
-        } 
 
-        // SI EL LOGIN FALLA
-        else {
-            alert(data.message || "Error al iniciar sesión");
+
+            return; // Importante: salir aquí
         }
 
-    } catch (error) {
+        // Si el login falla mostramos un mensaje de error
+        alert(data.message || "Error al iniciar sesión");
 
-        // SI HAY UN ERROR DE CONEXIÓN
+    } catch (error) {
         console.error("Error:", error);
         alert("No se pudo conectar con el servidor");
     }
 });
+

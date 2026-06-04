@@ -53,6 +53,7 @@
     <!-- Scripts con el atributo defer para que no afecte a la carga de la página  -->
   <script src="./Public/Js/MenuHamburguesa.js" defer></script>
   <script src="./Public/Js/Juego.js" defer></script>
+  <script src="./Public/Js/authMenu.js" defer></script>
   </head>
 
   <body>
@@ -74,21 +75,20 @@
       </div>
       <nav class="botones-header">
         <ul>
-          <li><a href="index.html" class="btn">Inicio</a></li>
-          <li><a href="Cursos.html" class="btn">Cursos</a></li>
-          <li><a href="btn Inicia Sesión" class="btn">Inicia Sesión</a></li>
+          <li><a id="btn-login" href="index.html" class="btn">Inicio</a></li>
+          <li><a id="btn-perfil" href="Cursos.html" class="btn">Cursos</a></li>
+          <li><a id="btn-login" href="login.html" class="btn">Inicia Sesión</a></li>
         </ul>
       </nav>
 
       <div id="menu-desplegable" class="menu-desplegable">
         <ul>
-          <li><a href="Perfil.html">Mi perfil</a></li>
+          <li><a id="hm-login" href="login.html">Inicia sesión</a></li>
+          <li><a id="hm-perfil" href="Perfil.html" style="display:none;">Mi perfil</a></li>
+          <li><a id="hm-logout" href="#" style="display:none;">Cerrar sesión</a></li>
+          
           <li><a href="index.html">Inicio</a></li>
           <li><a href="Introduccion.html">Introducción</a></li>
-          <li><a href="Historia.html">Historia</a></li>
-          <li><a href="Palos.html">Palos</a></li>
-          <li><a href="Compas.html">Compás</a></li>
-          <li><a href="Ritmo.html">Ritmo</a></li>
           <li><a href="Cursos.html">Cursos</a></li>
           <li><a href="Cesta.html">Cesta</a></li>
         </ul>
@@ -372,8 +372,10 @@
         </div>
       </div>
     </footer>
+
     <!-- <script src="./Public/Js/MenuHamburguesa.js"></script> -->
     <!-- <script src="./Public/Js/Juego.js"></script> -->
     <script src="./Public/Js/CarruselNoticias.js"></script>
+
   </body>
 </html>

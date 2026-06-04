@@ -49,6 +49,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- Scripts con el atributo defer para que no afecte a la carga de la página  -->
+    <script src="./Public/Js/MenuHamburguesa.js" defer></script>
+    <script src="./Public/Js/authMenu.js" defer></script>
   </head>
 <body>
   <!-- Cabecera -->
@@ -74,18 +78,17 @@
     </nav>
 
     <div id="menu-desplegable" class="menu-desplegable">
-      <ul>
-        <li><a href="Perfil.html">Mi perfil</a></li>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="Introduccion.html">Introducción</a></li>
-        <li><a href="Historia.html">Historia</a></li>
-        <li><a href="Palos.html">Palos</a></li>
-        <li><a href="Compas.html">Compás</a></li>
-        <li><a href="Ritmo.html">Ritmo</a></li>
-        <li><a href="Cursos.html">Cursos</a></li>
-        <li><a href="Cesta.html">Cesta</a></li>
-      </ul>
-    </div>
+        <ul>
+          <li><a id="hm-login" href="login.html">Inicia sesión</a></li>
+          <li><a id="hm-perfil" href="Perfil.html" style="display:none;">Mi perfil</a></li>
+          <li><a id="hm-logout" href="#" style="display:none;">Cerrar sesión</a></li>
+          
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Introduccion.html">Introducción</a></li>
+          <li><a href="Cursos.html">Cursos</a></li>
+          <li><a href="Cesta.html">Cesta</a></li>
+        </ul>
+      </div>
   </header>
 
   <!-- Sección vacía -->

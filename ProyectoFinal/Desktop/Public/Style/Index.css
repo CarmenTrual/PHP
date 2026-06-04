@@ -90,6 +90,10 @@ header {
   display: none;
 }
 
+
+/****************************************/
+/*           MENU HAMBURGUESA           */
+/****************************************/
 .menu-desplegable {
   position: absolute;
   z-index: 10;
@@ -111,7 +115,7 @@ header {
   position: absolute; /* Posicionamiento absoluto para que el menú desplegable se muestre encima del contenido */
   min-width: 200px; 
   left: 0; 
-  margin-top: 400px;
+  margin-top: 220px;
   margin-left: -20px;
   padding-left: 20px;
 }
@@ -674,7 +678,6 @@ transition: transform 0.3s ease-in-out; /* Transición suave en efecto hover*/
   padding:24px 24px;
 }
 
-
 .social-icon {
   height: 2.4rem;
   width: 2.4rem;
@@ -762,3 +765,57 @@ transition: transform 0.3s ease-in-out; /* Transición suave en efecto hover*/
   text-align: center;
   padding: 0.2rem;
 }
+
+
+/****************************************/
+/*             LOGIN PAGE               */
+/****************************************/
+
+.login-container {
+  width: 400px;
+  margin: 80px auto;
+  background-color: var(--negro);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px 0px var(--hover-btn);
+  text-align: center;
+}
+
+.login-title {
+  color: var(--blanco);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form label {
+  color: var(--blanco);
+  text-align: left;
+  font-weight: 600;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--hover-btn);
+  background-color: #ccc;
+  color: var(--negro);
+  font-size: 1rem;
+}
+
+.login-register {
+  margin-top: 20px;
+  color: var(--blanco);
+}
+
+.login-register a {
+  color: var(--hover-btn);
+  font-weight: bold;
+}
+
