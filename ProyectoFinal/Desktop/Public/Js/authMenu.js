@@ -1,16 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Recuperar token para saber si el usuario está logueado
     const token = localStorage.getItem("token");
 
+    // Botones del menú principal
     const btnLogin = document.getElementById("btn-login");
     const btnPerfil = document.getElementById("btn-perfil");
     const btnLogout = document.getElementById("btn-logout");
 
+    // Botones del menú hamburguesa
     const hmLogin = document.getElementById("hm-login");
     const hmPerfil = document.getElementById("hm-perfil");
     const hmLogout = document.getElementById("hm-logout");
 
+
+    // ==============================//
+    //   MOSTRAR / OCULTAR BOTONES   //
+    // ==============================//
     if (token) {
-        // Usuario logueado
+        // Usuario logueado: muestra perfil + logout y oculta login
         if (btnLogin) btnLogin.style.display = "none";
         if (btnPerfil) btnPerfil.style.display = "inline-block";
         if (btnLogout) btnLogout.style.display = "inline-block";
@@ -19,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hmPerfil) hmPerfil.style.display = "block";
         if (hmLogout) hmLogout.style.display = "block";
     } else {
-        // Usuario NO logueado
+        // Usuario no logueado: muestra login y oculta perfil + logout
         if (btnLogin) btnLogin.style.display = "inline-block";
         if (btnPerfil) btnPerfil.style.display = "none";
         if (btnLogout) btnLogout.style.display = "none";
@@ -29,16 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (hmLogout) hmLogout.style.display = "none";
     }
 
-    // Cerrar sesión
+    // ========================//
+    //         LOGOUT          //
+    // ========================//
+    // Al cerrar sesión se elimina el token y recarga la página
     if (btnLogout) {
-        btnLogout.addEventListener("click", () => {
+        btnLogout.addEventListener("click", () => { // Botón del menú principal
             localStorage.removeItem("token");
             window.location.reload();
         });
     }
 
     if (hmLogout) {
-        hmLogout.addEventListener("click", () => {
+        hmLogout.addEventListener("click", () => { // Botón del menú hamburguesa
             localStorage.removeItem("token");
             window.location.reload();
         });
