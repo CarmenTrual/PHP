@@ -1,11 +1,22 @@
+console.log("Cesta.js cargado");
+
 document.addEventListener("DOMContentLoaded", () => {
-  const abrirCarritoBtn = document.getElementById("abrir-carrito");
+  const abrirCarritoBtns = document.querySelectorAll(".abrir-carrito");
   const modal = document.getElementById("carrito-modal");
   const cerrarBtn = document.querySelector(".close-btn");
   const carritoItemsContainer = document.getElementById("carrito-items");
   const totalElement = document.getElementById("total");
 
   let carrito = [];
+
+  // ABRIR MODAL (funciona para los dos botones)
+  abrirCarritoBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("Botón de cesta pulsado");
+      modal.style.display = "block";
+    });
+  });
 
   function actualizarCarrito() {
     carritoItemsContainer.innerHTML = "";
@@ -34,14 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Abrir modal
-  if (abrirCarritoBtn) {
-    abrirCarritoBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      modal.style.display = "block";
-    });
-  }
-
   // Cerrar modal
   if (cerrarBtn) {
     cerrarBtn.addEventListener("click", () => {
@@ -67,5 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 

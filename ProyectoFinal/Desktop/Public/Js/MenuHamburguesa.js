@@ -12,7 +12,7 @@ const showMenu = (toggleId, navId) => {
   });
 };
 
-showMenu("nav-toggle", "nav-menu");
+//showMenu("nav-toggle", "nav-menu");
 
 function toggleMenu() {
   // Obtiene el icono del menú

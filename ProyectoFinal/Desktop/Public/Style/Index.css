@@ -768,7 +768,7 @@ transition: transform 0.3s ease-in-out; /* Transición suave en efecto hover*/
 
 
 /****************************************/
-/*             LOGIN PAGE               */
+/*          PAGINA DEL LOGIN            */
 /****************************************/
 
 .login-container {
@@ -815,6 +815,59 @@ transition: transform 0.3s ease-in-out; /* Transición suave en efecto hover*/
 }
 
 .login-register a {
+  color: var(--hover-btn);
+  font-weight: bold;
+}
+
+
+/****************************************/
+/*         PAGINA DEL REGISTRO          */
+/****************************************/
+
+.register-container {
+  width: 400px;
+  margin: 80px auto;
+  background-color: var(--negro);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px 0px var(--hover-btn);
+  text-align: center;
+}
+
+.register-title {
+  color: var(--blanco);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-form label {
+  color: var(--blanco);
+  text-align: left;
+  font-weight: 600;
+}
+
+.register-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--hover-btn);
+  background-color: #ccc;
+  color: var(--negro);
+  font-size: 1rem;
+}
+
+.register-login {
+  margin-top: 20px;
+  color: var(--blanco);
+}
+
+.register-login a {
   color: var(--hover-btn);
   font-weight: bold;
 }

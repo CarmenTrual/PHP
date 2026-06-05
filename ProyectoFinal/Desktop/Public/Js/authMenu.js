@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Botones del menú principal
     const btnLogin = document.getElementById("btn-login");
-    const btnPerfil = document.getElementById("btn-perfil");
+    const btnCesta = document.getElementById("btn-cesta");
     const btnLogout = document.getElementById("btn-logout");
 
     // Botones del menú hamburguesa
     const hmLogin = document.getElementById("hm-login");
-    const hmPerfil = document.getElementById("hm-perfil");
+    const hmCesta = document.getElementById("hm-cesta");
     const hmLogout = document.getElementById("hm-logout");
 
 
@@ -19,20 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (token) {
         // Usuario logueado: muestra perfil + logout y oculta login
         if (btnLogin) btnLogin.style.display = "none";
-        if (btnPerfil) btnPerfil.style.display = "inline-block";
+        if (btnCesta) btnCesta.style.display = "inline-block";
         if (btnLogout) btnLogout.style.display = "inline-block";
 
         if (hmLogin) hmLogin.style.display = "none";
-        if (hmPerfil) hmPerfil.style.display = "block";
+        if (hmCesta) hmCesta.style.display = "block";
         if (hmLogout) hmLogout.style.display = "block";
     } else {
         // Usuario no logueado: muestra login y oculta perfil + logout
         if (btnLogin) btnLogin.style.display = "inline-block";
-        if (btnPerfil) btnPerfil.style.display = "none";
+        if (btnCesta) btnCesta.style.display = "none";
         if (btnLogout) btnLogout.style.display = "none";
 
         if (hmLogin) hmLogin.style.display = "block";
-        if (hmPerfil) hmPerfil.style.display = "none";
+        if (hmCesta) hmCesta.style.display = "none";
         if (hmLogout) hmLogout.style.display = "none";
     }
 

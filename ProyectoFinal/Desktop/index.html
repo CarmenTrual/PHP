@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="./Public/Style/General.css" />
     <link rel="stylesheet" href="./Public/Style/Index.css" />
     <link rel="stylesheet" href="./Public/Style/Querys.css" />
+    <link rel="stylesheet" href="./Public/Style/Cesta.css" />
+
 
     <!--=============== REMIXICONS LIBRERIA DE ICONOS ===============-->
     <link
@@ -51,7 +53,7 @@
     />
 
     <!-- Scripts con el atributo defer para que no afecte a la carga de la página  -->
-  <script src="./Public/Js/MenuHamburguesa.js" defer></script>
+  <!-- <script src="./Public/Js/MenuHamburguesa.js" defer></script> -->
   <script src="./Public/Js/Juego.js" defer></script>
   <script src="./Public/Js/authMenu.js" defer></script>
   </head>
@@ -73,24 +75,41 @@
           alt="Logo de Entiende el Flamenco"
         />
       </div>
+
+      <!-- Botones del menú principal -->
       <nav class="botones-header">
         <ul>
-          <li><a id="btn-login" href="index.html" class="btn">Inicio</a></li>
-          <li><a id="btn-perfil" href="Cursos.html" class="btn">Cursos</a></li>
+          <!-- Botones siempre visibles -->
+          <li><a href="Introduccion.html" class="btn">Introducción</a></li>
+          <li><a href="Cursos.html" class="btn">Cursos</a></li>
+
+          <!-- Botón Cesta (visible si estás logueado) -->
+          <!-- <li><a id="btn-cesta" href="Cesta.html" class="btn" style="display:none;">Cesta</a></li> -->
+          <li><a id="btn-cesta" href="#" class="btn abrir-carrito" style="display:none;">Cesta</a></li>
+
+          <!-- Botón login -->
           <li><a id="btn-login" href="login.html" class="btn">Inicia Sesión</a></li>
+
+          <!-- Botón logout (visible si estás logueado) -->
+          <li><a id="btn-logout" href="#" class="btn" style="display:none;">Cerrar sesión</a></li>
         </ul>
       </nav>
 
+      <!-- Botones del menú hamburguesa -->
       <div id="menu-desplegable" class="menu-desplegable">
         <ul>
-          <li><a id="hm-login" href="login.html">Inicia sesión</a></li>
-          <li><a id="hm-perfil" href="Perfil.html" style="display:none;">Mi perfil</a></li>
-          <li><a id="hm-logout" href="#" style="display:none;">Cerrar sesión</a></li>
-          
-          <li><a href="index.html">Inicio</a></li>
+          <!-- Botones siempre visibles -->
           <li><a href="Introduccion.html">Introducción</a></li>
           <li><a href="Cursos.html">Cursos</a></li>
-          <li><a href="Cesta.html">Cesta</a></li>
+
+          <!-- Botón Cesta (visible si estás logueado) -->
+          <li><a id="hm-cesta" href="#" class="abrir-carrito" style="display:none;">Cesta</a></li>
+
+          <!-- Botón login -->
+          <li><a id="hm-login" href="login.html">Inicia sesión</a></li>
+
+          <!-- Botón logout (visible si estás logueado) -->
+          <li><a id="hm-logout" href="#" style="display:none;">Cerrar sesión</a></li>
         </ul>
       </div>
     </header>
@@ -231,7 +250,6 @@
             pentagrama, motivo por el que tuvo que
             memorizar todo el Concierto de Aranjuez antes de
             tocarlo, lo que demuestra su virtuosismo con la guitarra.</p>
-
         </div>
 
         <div class="grid4 grid_item_img">
@@ -373,9 +391,11 @@
       </div>
     </footer>
 
-    <!-- <script src="./Public/Js/MenuHamburguesa.js"></script> -->
+    <script src="./Public/Js/MenuHamburguesa.js"></script>
     <!-- <script src="./Public/Js/Juego.js"></script> -->
     <script src="./Public/Js/CarruselNoticias.js"></script>
+    <script src="./Public/Js/Cesta.js"></script>
+
 
   </body>
 </html>

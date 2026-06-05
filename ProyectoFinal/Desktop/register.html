@@ -3,9 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registro</title>
+
+  <!--========= LINKS HOJAS DE ESTILO =========-->
+  <link rel="stylesheet" href="./Public/Style/General.css">
+  <link rel="stylesheet" href="./Public/Style/Index.css">
 </head>
 <body>
+  <h1>Crear cuenta</h1>
   
+  <!--========= FORMULARIO DE REGISTRO =========-->
+  <!-- Campos para crear un usuario -->
+  <form id="registerForm">
+    <label>Nombre</label>
+    <input type="text" id="name" required>
+
+    <label>Email</label>
+    <input type="email" id="email" required>
+
+    <label>Contraseña</label>
+    <input type="password" id="password" required>
+
+    <label>Confirmar contraseña</label>
+    <input type="password" id="password_confirmation" required>
+
+    <button type="submit">Registrarse</button>
+    </form>
+
+    <!-- Enlace para usuarios que ya tienen cuenta -->
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+
+    <!-- Archivo JS que manejará el registro -->
+    <script src="./public/js/register.js"></script>
+
 </body>
 </html>
