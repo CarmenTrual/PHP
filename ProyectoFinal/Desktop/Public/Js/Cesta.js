@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const carritoItemsContainer = document.getElementById("carrito-items");
   const totalElement = document.getElementById("total");
 
+  // Array para almacenar los cursos
   let carrito = [];
+
+  // Cargar carrito desde localStorage al iniciar
+  const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito = carritoGuardado;
+  actualizarCarrito();
 
   // ABRIR MODAL (funciona para los dos botones)
   abrirCarritoBtns.forEach(btn => {
@@ -41,6 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const index = btn.dataset.index;
         carrito.splice(index, 1);
         actualizarCarrito();
+
+        // Guardar carrito después de eliminar
+        localStorage.setItem("carrito", JSON.stringify(carrito));
       });
     });
   }
@@ -66,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       carrito.push({ nombre, precio });
       actualizarCarrito();
+
+      // Guardar carrito después de agregar
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+
       modal.style.display = "block"; // abrir modal automáticamente
     }
   });

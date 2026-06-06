@@ -65,5 +65,21 @@
   text-align: right;
 }
 
+.btn-pagar {
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-size: 1.6rem;
+  border-radius: 20;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 180px;
+  text-align: center;
+}
+
+.btn-pagar:hover {
+  background-color: var(--hover-btn);
+}
+
 
 
